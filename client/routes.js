@@ -24,7 +24,7 @@ class Routes extends Component {
           <Switch>
             {
               isLoggedIn ?
-                <div>
+                <Main>
                   <Navbar />
                   <Switch>
                     <Route path="/landing" component={Landing} />                
@@ -32,7 +32,7 @@ class Routes extends Component {
                     <Route path="/home/segment/" component={Dashboard} />
                     <Route component={Dashboard} />
                   </Switch>
-                </div> :
+                </Main> :
                 <Switch>
                   <Route path="/login" component={Landing} />
                   <Route component={Landing} />

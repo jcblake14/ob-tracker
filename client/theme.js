@@ -12,4 +12,4 @@ const theme2 = {
   color4: '#FFFAE3'
 }
 
-export default theme;
+export default theme2;

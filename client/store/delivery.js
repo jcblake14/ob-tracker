@@ -6,7 +6,10 @@ import history from '../history'
  */
 const defaultDelivery = {
   date: '',
-  patient_id: '',
+  patient_age: '',
+  gravidity: '',
+  parity: '',
+  bmi: '',
   gestational_age: '',
   weeks: '',
   days: '',
@@ -54,7 +57,10 @@ export function createDelivery(){
 export default function (state = defaultDelivery, action) {
   switch (action.type) {
     case UPDATE_FIELD:
-      return Object.assign({}, state, {[action.field]: action.data});
+      const newState = Object.assign({}, state, {[action.field]: action.data})
+      if (newState.type !== 'C-section') newState.indication = '';
+      if (newState.induced !== 'Yes') newState.induction_reason = '';
+      return newState;
     case CLEAR_DELIVERY:
       return defaultDelivery;
     default:

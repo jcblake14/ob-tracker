@@ -6,6 +6,18 @@ module.exports = db.define('delivery', {
   date: {
     type: Sequelize.DATE
   },
+  patient_age: {
+    type: Sequelize.INTEGER
+  },
+  gravidity: {
+    type: Sequelize.INTEGER
+  },
+  parity: {
+    type: Sequelize.INTEGER
+  },
+  bmi: {
+    type: Sequelize.INTEGER
+  },
   type: {
     type: Sequelize.STRING,
     defaultValue: null
