@@ -19,7 +19,7 @@ export const Panel = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: ${props => props.left ? theme.color1 : theme.color2};
+  background-color: ${props => props.left ? theme.colorLeft : theme.colorRight};
   width: 100%;
   &:hover{
     background-color: #DEE3E5;
@@ -60,4 +60,19 @@ export const Sidebar = styled.div`
   flex-direction: column;
   padding: 0px 10px;
   background: ${theme.color4};
+`
+
+export const AuthLink = styled(Link)`
+  margin-top: 20px;
+  color: grey;
+  font-size: 12px;
+  &:visited{
+    text-decoration: none;
+  }
+  &:active{
+    text-decoration: none;
+  }
+  &:hover{
+    text-decoration: none;
+  }
 `

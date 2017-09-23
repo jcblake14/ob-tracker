@@ -35,6 +35,7 @@ class Routes extends Component {
                 </Main> :
                 <Switch>
                   <Route path="/login" component={Landing} />
+                  <Route path="/signup" component={Landing} />
                   <Route component={Landing} />
                 </Switch>
             }

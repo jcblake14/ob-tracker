@@ -20,7 +20,10 @@ const Delivery = (props) => {
 
   const RadioButtons = (props) => (
     <div>
-      <RadioButtonGroup name="C-Section" onChange={(e) => handleSelect(e, e.target.value, props.type)}>
+      <RadioButtonGroup
+        name="C-Section"
+        valueSelected={props.induced}
+        onChange={(e) => handleSelect(e, e.target.value, props.type)}>
         <RadioButton
           value="Yes"
           label="Yes"
@@ -53,7 +56,7 @@ const Delivery = (props) => {
         }
 
         <h4>Induced</h4>
-        <RadioButtons type="induced"/>
+        <RadioButtons type="induced" selected={induced}/>
 
         {induced === 'Yes' ? 
           <SelectField floatingLabelText="Induction Reason" value={induction_reason}

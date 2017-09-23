@@ -1,7 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import history from '../history'
 import {connect} from 'react-redux'
 import {Container} from './styled'
+
+// Material UI imports
+import IconButton from 'material-ui/IconButton';
 import {
   Table,
   TableBody,
@@ -10,20 +14,22 @@ import {
   TableRow,
   TableRowColumn,
 } from 'material-ui/Table';
-import history from '../history'
+
+function SortButton(){
+  return <IconButton iconStyle={{ fontSize: "12px" }} iconClassName="fa fa-sort"></IconButton>
+}
 
 export default function (props){
-
   return (
     <Container short center>
       <h1>Deliveries</h1>
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHeaderColumn>Date</TableHeaderColumn>
-            <TableHeaderColumn>Delivery Type</TableHeaderColumn>
-            <TableHeaderColumn>Indication</TableHeaderColumn>
-            <TableHeaderColumn>Induction Reason</TableHeaderColumn>
+            <TableHeaderColumn>Date<SortButton/></TableHeaderColumn>
+            <TableHeaderColumn>Delivery Type<SortButton/></TableHeaderColumn>
+            <TableHeaderColumn>Indication<SortButton/></TableHeaderColumn>
+            <TableHeaderColumn>Induction Reason<SortButton/></TableHeaderColumn>
           </TableRow>
         </TableHeader>
         <TableBody>

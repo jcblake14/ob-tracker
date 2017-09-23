@@ -46,6 +46,7 @@ export function createDelivery(){
     );
     return axios.post('/api/delivery', delivery)
     .then(res => {
+      history.push('/home')      
       console.log('response from back end:', res.data)
     })
   }

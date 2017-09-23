@@ -9,7 +9,7 @@ export function filterByRange(deliveries, range){
   if (range.end) deliveries = deliveries.filter(d => {
     return new Date(d.date) <= range.end;
   })
-  return deliveries
+  return deliveries;
 }
 
 export function buildChartData(deliveries, segment){
@@ -68,12 +68,6 @@ export function validate(data) {
 }
 
 export const form = {
-  testData: [
-    'Barry',
-    'Judith',
-    'Rachel',
-    'Jessica'
-  ],
   indications: [
     'breech position',
     'failed induction',
@@ -99,8 +93,8 @@ export const form = {
     'other'
   ],
   types: [
-    'Vaginal',
-    'Vaginal operative',
+    'Natural',
+    'Operative',
     'C-section'
   ]
 }

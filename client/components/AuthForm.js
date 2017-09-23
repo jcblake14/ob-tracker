@@ -1,8 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
+import {Link} from 'react-router-dom'
 import {auth} from '../store'
-import {Container} from './styled'
+import {Container, AuthLink} from './styled'
 import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
 
@@ -10,9 +11,24 @@ const AuthForm = (props) => {
   const {name, displayName, handleSubmit, error} = props
 
   return (
-      <Container center>
-        <a href="/auth/google"><img src="/btn_google_signin_dark_normal_web.png"/></a>
-      </Container>      
+    <Container center>
+      <TextField
+        hintText="Email"
+        floatingLabelText="Email"
+        onChange={console.log}
+      />
+      <TextField
+        hintText="Password"
+        floatingLabelText="Password"
+        onChange={console.log}
+      />
+      <FlatButton>
+        Enter
+      </FlatButton>
+      <p>- OR -</p>
+      <a href="/auth/google"><img src="/btn_google_signin_dark_normal_web.png"/></a>
+      <AuthLink to="/signup">New to Ob Tracker? Click here to sign up.</AuthLink>
+    </Container>      
   )
 }
 

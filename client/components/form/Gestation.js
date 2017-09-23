@@ -17,21 +17,6 @@ const Gestation = (props) => {
     warn, validations
   } = props
 
-  const RadioButtons = (props) => (
-    <div>
-      <RadioButtonGroup name="C-Section" onChange={(e) => handleSelect(e, e.target.value, props.type)}>
-        <RadioButton
-          value="Yes"
-          label="Yes"
-        />
-        <RadioButton
-          value="No"
-          label="No"
-        />
-      </RadioButtonGroup>
-    </div>
-  );
-
   return (
     <Fieldset>
       <h4>Gestational Age</h4>

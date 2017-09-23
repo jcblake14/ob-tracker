@@ -5,16 +5,30 @@ import history from '../history'
 import C3Chart from 'react-c3js';
 import {Container} from './styled'
 import {buildColumns, buildColors} from '../utils'
+import theme from '../theme'
 
 export default function Chart(props){
 
   const columns= buildColumns(props.segment);
-  const colors = buildColors(columns);
+  const length = columns.length;
+  const colors = [theme.color1, theme.color2, theme.color3, '#FF6B6B', '#FFE66D', '#36A2EB', '#5D576B', '#FFFAE3', '#1A535C'];
+  
+  function generateColors(l){
+    let counter = 0;
+    return function(c, i){
+      counter++;
+      var idx = counter % l;
+      return colors[idx]
+    }
+  }
+  
+  const chooseColor = generateColors(length);
 
   const data = {
     type: 'donut',
     columns: columns,
-    colors: colors,
+    color: chooseColor,
+    // colors: colors,
     onclick: function (d, i) {
       console.log(d)
       // history.push(`/home/segment/${props.name}/${d.id}`)
