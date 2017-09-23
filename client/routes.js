@@ -4,7 +4,7 @@ import {Router} from 'react-router'
 import {Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import history from './history'
-import {Main, Login, Signup, UserHome, Form, Dashboard, Landing, Navbar} from './components'
+import {Main, Login, Signup, UserHome, Form, Dashboard, Landing, Navbar, ComingSoon} from './components'
 import {me} from './store'
 
 /**
@@ -34,9 +34,9 @@ class Routes extends Component {
                   </Switch>
                 </Main> :
                 <Switch>
-                  <Route path="/login" component={Landing} />
-                  <Route path="/signup" component={Landing} />
-                  <Route component={Landing} />
+                  <Route path="/login" component={ComingSoon} />
+                  <Route path="/signup" component={ComingSoon} />
+                  <Route component={ComingSoon} />
                 </Switch>
             }
           </Switch>

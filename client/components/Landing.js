@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {withRouter, Link} from 'react-router-dom'
 import {Login} from '../components'
-import {Container, Panel, Intro, IntroLink} from './styled'
+import {Container, Panel, IntroText, IntroLink} from './styled'
 import IconButton from 'material-ui/IconButton';
 import Dialog from 'material-ui/Dialog';
 
@@ -22,14 +22,14 @@ function Landing(props){
         <Panel left>
           <Container row center>
             {icon('arrow_back')}
-            <Intro> Demo</Intro>
+            <IntroText> Demo</IntroText>
           </Container>
         </Panel>  
       </IntroLink>
       <IntroLink to="/login">      
         <Panel right>
           <Container row center>
-            <Intro>Sign Up </Intro>
+            <IntroText>Sign Up </IntroText>
             {icon('arrow_forward')}
           </Container>
         </Panel>

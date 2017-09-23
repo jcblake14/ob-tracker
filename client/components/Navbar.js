@@ -20,7 +20,7 @@ const Navbar = (props) => {
 
   return (
     <Card>
-      <Bar>
+      <Bar justify={'flex-end'}>
       <Link to="/home">{icon('home')}</Link>
       <Link to="/new">{icon('add_circle')}</Link>
       <a href="#" onClick={handleClick}>{icon('exit_to_app')}</a>
