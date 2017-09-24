@@ -5,9 +5,10 @@ import {withRouter} from 'react-router-dom'
 import {setDate, clearDate} from '../store'
 import {Container, Sidebar} from './styled'
 import history from '../history'
+
+// Material UI imports
 import RaisedButton from 'material-ui/RaisedButton';
 import DatePicker from 'material-ui/DatePicker';
-import {Card} from 'material-ui/Card';
 
 const style = {
   margin: 12,
@@ -18,14 +19,9 @@ const datePickerStyle = {
   paddingLeft: '16px'
 }
 
-const cardStyle = {
-  marginLeft: '20px',
-  marginTop: '20px'
-}
-
-function Range(props){
+function FilterDate(props){
   return (
-    <Card style={cardStyle}>
+    <Container>
       <h3 style={{textAlign: 'center'}}>Limit by Date</h3>
       <Container background={'#FFFAE3'}>
         <RaisedButton label="Last 7 Days" style={style} onClick={(e) => props.handleClick(e, 7)}/>
@@ -35,7 +31,7 @@ function Range(props){
         <DatePicker hintText="End Date" mode="landscape" value={props.end} hintStyle={datePickerStyle} inputStyle={datePickerStyle} onChange={(e, d) => props.handleDate(e, d, 'end')}/>   
         <RaisedButton label="Clear" style={style} secondary={true} disabled={!props.start && !props.end} onClick={props.handleClick} />  
       </Container>
-    </Card>
+    </Container>
   )
 }
 
@@ -65,4 +61,4 @@ const mapDispatch = (dispatch) => {
   }
 }
 
-export default withRouter(connect(mapState, mapDispatch)(Range))
+export default withRouter(connect(mapState, mapDispatch)(FilterDate))

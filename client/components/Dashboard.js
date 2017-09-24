@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {getDeliveries} from '../store'
-import {Chart, Range, Table, Navbar} from '../components'
+import {Chart, Filters, Table, Navbar} from '../components'
 import {Container} from './styled'
 import {filterByRange, buildChartData} from '../utils'
 
@@ -21,7 +21,7 @@ class Dashboard extends React.Component {
     
     return (
       <Container row start>
-        <Range />
+        <Filters />
         {deliveries.length ?
         <Container>
           <Container row>

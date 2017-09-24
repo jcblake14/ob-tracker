@@ -10,3 +10,22 @@ h1, h2, h3, h4, h4 {
 a {
   font-family: 'Montserrat'  
 }
+
+/* CSS TRANSITIONS */ 
+.fade-appear {
+  opacity: 0.01;
+}
+
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.fade-leave {
+  opacity: 1;
+}
+
+.fade-leave.fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}

@@ -141,12 +141,24 @@ export const IntroNotify = styled.div`
 `
 
 export const Input = styled.input`
-  width: 200px,
-  border: 0px,
-  border-radius: 2px,
-  padding: 10px,
-  color: ${theme.color1},
-  &:placeholder{
-    color: red;
+  width: 200px;
+  border: 0px;
+  border-radius: 2px;
+  padding: 10px;
+  color: ${theme.color5};
+  &::placeholder{
+    color: ${theme.color5};
+  }
+`
+
+export const AuthInput = styled.input`
+  width: 180px;
+  border: 2px solid ${theme.color5a};
+  border-radius: 2px;
+  padding: 10px;
+  margin: 10px 0px;
+  color: ${theme.color5};
+  &::placeholder{
+    color: ${theme.color5};
   }
 `

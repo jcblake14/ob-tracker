@@ -4,6 +4,8 @@ import {withRouter, Link} from 'react-router-dom'
 import {Login} from '../components'
 import {Container, Intro, IntroBar, Title, SubTitle, IntroCard, IntroLinks, IntroNotify, Input} from './styled'
 import theme from '../theme'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
 
 // Material UI imports
 import Dialog from 'material-ui/Dialog';
@@ -38,59 +40,64 @@ const demo = {
   width: '200px'
 }
 
-const input = {
-  width: '200px',
-  border: '0px',
-  borderRadius: '2px',
-  padding: '10px',
-  color: theme.color5,
+const dialog = {
+  width: '450px'
 }
 
 function ComingSoon(props){
   return (
-    <Intro>
-      <Dialog modal={false} open={props.path === '/login' && !props.isLoggedIn}>
-        <Login />
-      </Dialog>
-      <IntroCard>
+    <ReactCSSTransitionGroup
+    transitionName="fade"
+    transitionAppear={true}
+    transitionAppearTimeout={500}
+    transitionEnter={false}
+    transitionLeave={false}
+    >
+      <Intro>
+        <Dialog modal={false} open={props.path === '/login' && !props.isLoggedIn} contentStyle={dialog}>
+          <Login />
+        </Dialog>
+        <IntroCard>
 
-          <IntroBar>
+            <IntroBar>
 
-            <Container style={{flexGrow: '5'}}>
-                <IntroLinks to='/about' width={'100%'}>
-                  <Container row>
-                    <img src='/stethescope.png' style={logo1}/>
-                    OB TRACKER
-                  </Container>
-                </IntroLinks>
+              <Container style={{flexGrow: '5'}}>
+                  <IntroLinks to='/about' width={'100%'}>
+                    <Container row>
+                      <img src='/stethescope.png' style={logo1}/>
+                      OB TRACKER
+                    </Container>
+                  </IntroLinks>
+              </Container>
+
+              <Container row style={right}>
+                <IntroLinks to="/about">ABOUT</IntroLinks>
+                <IntroLinks to="/contact">CONTACT</IntroLinks>
+              </Container>
+
+            </IntroBar>
+
+            <Container center>
+              <Title>COMING SOON</Title>
             </Container>
 
-            <Container row style={right}>
-              <IntroLinks to="/about">ABOUT</IntroLinks>
-              <IntroLinks to="/contact">CONTACT</IntroLinks>
+            <IntroNotify>
+              <Input placeholder="YOUR EMAIL"></Input>
+              <FlatButton style={notify}>NOTIFY ME</FlatButton>
+            </IntroNotify>
+
+            <Container center>
+              <SubTitle>- OR -</SubTitle>
             </Container>
 
-          </IntroBar>
+            <Container>
+              <Link to="/login"><FlatButton style={demo}>TRY THE DEMO</FlatButton></Link>
+            </Container>
 
-          <Container center>
-            <Title>COMING SOON</Title>
-          </Container>
+          </IntroCard>
+      </Intro>
 
-          <IntroNotify>
-            <Input style={input} placeholder="YOUR EMAIL"></Input>
-            <FlatButton style={notify}>NOTIFY ME</FlatButton>
-          </IntroNotify>
-
-          <Container center>
-            <SubTitle>- OR -</SubTitle>
-          </Container>
-
-          <Container>
-            <Link to="/login"><FlatButton style={demo}>TRY THE DEMO</FlatButton></Link>
-          </Container>
-
-        </IntroCard>
-    </Intro>
+    </ReactCSSTransitionGroup>
   )
 }
 
