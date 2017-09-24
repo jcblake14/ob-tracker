@@ -11,8 +11,7 @@ import {FilterDate, Sliders} from '../components'
 import {Card} from 'material-ui/Card';
 
 const cardStyle = {
-  marginLeft: '20px',
-  marginTop: '20px'
+  margin: '20px'
 }
 
 export default function Filters(){

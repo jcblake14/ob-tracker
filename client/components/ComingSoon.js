@@ -91,7 +91,7 @@ function ComingSoon(props){
             </Container>
 
             <Container>
-              <Link to="/login"><FlatButton style={demo}>TRY THE DEMO</FlatButton></Link>
+              <Link to="/demo"><FlatButton style={demo}>TRY THE DEMO</FlatButton></Link>
             </Container>
 
           </IntroCard>

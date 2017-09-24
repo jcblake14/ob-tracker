@@ -33,4 +33,4 @@ const theme2 = {
   colorRight: '#C3C7C9'
 }
 
-export default theme;
+export default theme2;

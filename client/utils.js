@@ -12,6 +12,15 @@ export function filterByRange(deliveries, range){
   return deliveries;
 }
 
+export function applyFilters(del, filters){
+  if (typeof filters != 'object') return del;
+  for (let key in filters){
+    if (filters[key].minValue) del = del.filter(d => d[key] >= filters[key].minValue)
+    if (filters[key].maxValue) del = del.filter(d => d[key] <= filters[key].maxValue)
+  }
+  return del;
+}
+
 export function buildChartData(deliveries, segment){
   return deliveries.map(d => d[segment]).filter(el => !!el);
 }
@@ -68,6 +77,11 @@ export function validate(data) {
 }
 
 export const form = {
+  gestations: [
+    'single',
+    'double',
+    '3+'
+  ],
   indications: [
     'breech position',
     'failed induction',
@@ -96,5 +110,28 @@ export const form = {
     'Natural',
     'Operative',
     'C-section'
+  ],
+  positions: [
+    'vertex',
+    'breech',
+    'transverse'
   ]
+}
+
+// STORE
+export function getFilterRanges(deliveries){
+  const filters = {
+    bmi: {min: '', max: ''},
+    patient_age: {min: '', max: ''},
+    gestational_age: {min: '', max: ''}
+  };
+  deliveries.forEach(d => {
+    if (!filters.bmi.min || d.bmi < filters.bmi.min) filters.bmi.min = d.bmi;
+    if (!filters.bmi.max || d.bmi > filters.bmi.max) filters.bmi.max = d.bmi;
+    if (!filters.gestational_age.min || d.gestational_age < filters.gestational_age.min) filters.gestational_age.min = d.gestational_age;
+    if (!filters.gestational_age.max || d.gestational_age > filters.gestational_age.max) filters.gestational_age.max = d.gestational_age;
+    if (!filters.patient_age.min || d.patient_age < filters.patient_age.min) filters.patient_age.min = d.patient_age;    
+    if (!filters.patient_age.max || d.patient_age > filters.patient_age.max) filters.patient_age.max = d.patient_age;
+  })
+  return filters;
 }

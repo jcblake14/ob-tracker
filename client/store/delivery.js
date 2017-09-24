@@ -10,13 +10,15 @@ const defaultDelivery = {
   gravidity: '',
   parity: '',
   bmi: '',
+  gestation: '',
   gestational_age: '',
   weeks: '',
   days: '',
   type: '',
   indication: '',
   induced: '',
-  induction_reason: ''
+  induction_reason: '',
+  position: ''
 }
 
 /**
@@ -38,7 +40,7 @@ export const clearDelivery = () => ({type: CLEAR_DELIVERY})
 export function createDelivery(){
   return function(dispatch, getState){
     const state = getState();
-    const gestational_age = state.delivery.weeks * 7 + state.delivery.days;
+    const gestational_age = +state.delivery.weeks * 7 + +state.delivery.days;
     const delivery = Object.assign({},
       state.delivery,
       {gestational_age},

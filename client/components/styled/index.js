@@ -162,3 +162,8 @@ export const AuthInput = styled.input`
     color: ${theme.color5};
   }
 `
+
+export const Label = styled.h4`
+  margin-top: 0px;
+  margin-bottom: 5px;
+`

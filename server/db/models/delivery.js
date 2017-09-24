@@ -18,6 +18,9 @@ module.exports = db.define('delivery', {
   bmi: {
     type: Sequelize.INTEGER
   },
+  gestation: {
+    type: Sequelize.STRING
+  },
   type: {
     type: Sequelize.STRING,
     defaultValue: null
@@ -41,5 +44,8 @@ module.exports = db.define('delivery', {
     type: Sequelize.STRING,
     defaultValue: null
     /* see https://paper.dropbox.com/doc/Rachels-App-0bc5luFXtzRFZrFEncD0V */
+  },
+  position: {
+    type: Sequelize.STRING
   }
 });

@@ -1,5 +1,7 @@
 import axios from 'axios'
 import history from '../history'
+import {initializeFilters} from '../store'
+import {getFilterRanges} from '../utils'
 
 /**
  * ACTION TYPES
@@ -16,7 +18,6 @@ const defaultDeliveries = []
  */
 const setDeliveries = (deliveries) => ({type: SET_DELIVERIES, deliveries})
 
-
 /**
  * THUNK CREATORS
 */
@@ -25,6 +26,7 @@ export function getDeliveries(userId){
     return axios.get(`/api/users/${userId}/deliveries`)
     .then(res => {
       dispatch(setDeliveries(res.data));
+      dispatch(initializeFilters(getFilterRanges(res.data)));
     })
   }
 }

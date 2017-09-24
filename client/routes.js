@@ -35,6 +35,7 @@ class Routes extends Component {
                 <Switch>
                   <Route path="/login" component={ComingSoon} />
                   <Route path="/signup" component={ComingSoon} />
+                  <Route path="/demo" component={Dashboard} />
                   <Route component={ComingSoon} />
                 </Switch>
             }

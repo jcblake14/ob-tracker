@@ -15,6 +15,7 @@ const Delivery = (props) => {
     induced,
     indication,
     induction_reason,
+    position,
     warn, validations
   } = props
 
@@ -66,6 +67,14 @@ const Delivery = (props) => {
           </SelectField>
           : null 
         }
+
+        <SelectField value={position}
+          floatingLabelText="Position"
+          errorText={warn && !validations.position && 'Please enter a valid position'}
+          onChange={(e, data) => handleSelect(e, data, 'position')}>
+          {form.positions.map((position, i) => {return <MenuItem key={i} value={position} primaryText={position} />})}
+        </SelectField> 
+
       </Container>
     </Fieldset>
   )
@@ -77,6 +86,7 @@ const mapState = (state) => {
     indication: state.delivery.indication,
     induced: state.delivery.induced,
     induction_reason: state.delivery.induction_reason,
+    position: state.delivery.position,
     warn: state.form.warn
   }
 }
@@ -87,6 +97,7 @@ const mapDispatch = (dispatch) => {
     if (type === 'type') data = form.types[data];
     if (type === 'induction_reason') data = form.inductions[data]
     if (type === 'indication') data = form.indications[data]
+    if (type === 'position') data = form.positions[data]
     dispatch(updateField(type, data));
   }
 

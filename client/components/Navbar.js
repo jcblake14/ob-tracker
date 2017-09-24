@@ -4,15 +4,16 @@ import {connect} from 'react-redux'
 import {withRouter, Link} from 'react-router-dom'
 import {logout} from '../store'
 import {Bar} from './styled'
+
+// Material UI imports
 import IconButton from 'material-ui/IconButton';
 import {Card} from 'material-ui/Card';
-
 
 function icon(type){
  return <IconButton iconStyle={iconStyle} iconClassName="material-icons">{type}</IconButton>
 }
 const iconStyle = {
-  fontSize: "30px", color: "black"
+  fontSize: "30px", color: 'black'
 }
 
 const Navbar = (props) => {

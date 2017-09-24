@@ -16,19 +16,20 @@ const style = {
 
 const datePickerStyle = {
   width: '100%',
-  paddingLeft: '16px'
+  paddingLeft: '16px',
+  margin: '0px 10px'
 }
 
 function FilterDate(props){
   return (
     <Container>
       <h3 style={{textAlign: 'center'}}>Limit by Date</h3>
-      <Container background={'#FFFAE3'}>
+      <Container>
         <RaisedButton label="Last 7 Days" style={style} onClick={(e) => props.handleClick(e, 7)}/>
         <RaisedButton label="Last 30 Days" style={style} onClick={(e) => props.handleClick(e, 30)}/>
         <RaisedButton label="This Year (beta)" style={style} disabled={true}/>
-        <DatePicker hintText="Start Date" mode="landscape" value={props.start} hintStyle={datePickerStyle} inputStyle={datePickerStyle} onChange={(e, d) => props.handleDate(e, d, 'start')}/>
-        <DatePicker hintText="End Date" mode="landscape" value={props.end} hintStyle={datePickerStyle} inputStyle={datePickerStyle} onChange={(e, d) => props.handleDate(e, d, 'end')}/>   
+        <DatePicker hintText="Start Date" mode="landscape" value={props.start} hintStyle={datePickerStyle} inputStyle={datePickerStyle} style={style} onChange={(e, d) => props.handleDate(e, d, 'start')}/>
+        <DatePicker hintText="End Date" mode="landscape" value={props.end} hintStyle={datePickerStyle} inputStyle={datePickerStyle} style={style} onChange={(e, d) => props.handleDate(e, d, 'end')}/>   
         <RaisedButton label="Clear" style={style} secondary={true} disabled={!props.start && !props.end} onClick={props.handleClick} />  
       </Container>
     </Container>

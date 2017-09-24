@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
-import {getDeliveries} from '../store'
+import {auth, getDeliveries} from '../store'
 import {Chart, Filters, Table, Navbar} from '../components'
 import {Container} from './styled'
-import {filterByRange, buildChartData} from '../utils'
+import {filterByRange, applyFilters, buildChartData} from '../utils'
 
 class Dashboard extends React.Component {
   constructor(props){
@@ -12,12 +12,14 @@ class Dashboard extends React.Component {
   }
 
   componentDidMount(){
-    this.props.getDeliveries(this.props.userId);
+    if (!this.props.isLoggedIn && this.props.location.pathname === '/demo') {this.props.logInDemo()}
+    else this.props.getDeliveries(this.props.userId);
   }
 
   render(){
-    let {userId, deliveries, range} = this.props
+    let {userId, deliveries, range, filters, sortTable} = this.props
     deliveries = filterByRange(deliveries, range);
+    deliveries = applyFilters(deliveries, filters);
     
     return (
       <Container row start>
@@ -31,7 +33,7 @@ class Dashboard extends React.Component {
           <Table segment={deliveries}/>
         </Container> :
         <Container fullWidth row center>
-          <img src="/Eclipse.svg" style={{width: '30px'}}/>
+          <h3>No deliveries to display</h3>
         </Container>
         }
       </Container>
@@ -41,9 +43,11 @@ class Dashboard extends React.Component {
 
 const mapState = (state) => {
   return {
+    isLoggedIn: !!state.user.id,
     userId: state.user.id,
     deliveries: state.deliveries,
-    range: state.range
+    range: state.range,
+    filters: state.filters,
   }
 }
 
@@ -51,11 +55,12 @@ const mapDispatch = (dispatch) => {
   return {
     getDeliveries(userId){
       dispatch(getDeliveries(userId))
+    },
+    logInDemo(){
+      dispatch(auth('obtrackertest@gmail.com', 'obtrackertest', 'Login'))
     }
   }
 }
-
-
 
 export default connect(mapState, mapDispatch)(Dashboard)
 
@@ -63,31 +68,3 @@ Dashboard.propTypes = {
   email: PropTypes.string,
   deliveries: PropTypes.array
 }
-
-
-// RENDER CHARTS SWITCH
-/*
-
-
-    function renderCharts(segmentName){
-      switch(segmentName){
-        case 'c_section':
-          return <Chart segment={indication} title={'Indication'} name={'indication'}/>
-        case 'induced':
-          return <Chart segment={induction} title={'Induction Reason'} name={'induction_reason'}/>
-        default:
-          return (<Container row>
-            <Chart segment={type} title={'Delivery type'} name={'type'}/>
-            <Chart segment={induced} title={'Induced'} name={'induced'}/>
-          </Container>)
-      }
-    }
-
-function filterBySegment(deliveries, segment, value){
-  return deliveries.filter(d => d[segment] === value);
-}
-
-deliveries = filterBySegment(deliveries, segmentName, value);
-
-
-*/

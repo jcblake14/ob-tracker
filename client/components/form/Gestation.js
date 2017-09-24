@@ -6,12 +6,14 @@ import {Container, Fieldset} from '../styled'
 import {form} from '../../utils'
 
 // Material UI imports
-import MenuItem from 'material-ui/MenuItem';
 import TextField from 'material-ui/TextField';
+import SelectField from 'material-ui/SelectField';
+import MenuItem from 'material-ui/MenuItem';
 
 const Gestation = (props) => {
   const {children,
     handleSelect,
+    gestation,
     weeks,
     days,
     warn, validations
@@ -19,9 +21,16 @@ const Gestation = (props) => {
 
   return (
     <Fieldset>
-      <h4>Gestational Age</h4>
+      <h4>Gestation</h4>
       <Container>
-      
+
+      <SelectField value={gestation}
+        floatingLabelText="Number"
+        errorText={warn && !validations.gestation && 'Please enter a valid gestation number'}
+        onChange={(e, data) => handleSelect(e, data, 'gestation')}>
+        {form.gestations.map((gestation, i) => {return <MenuItem key={i} value={gestation} primaryText={gestation} />})}
+      </SelectField> 
+
       <TextField value={weeks}
         hintText="Weeks"  
         floatingLabelText="Weeks"
@@ -45,6 +54,7 @@ const Gestation = (props) => {
 
 const mapState = (state) => {
   return {
+    gestation: state.delivery.gestation,
     weeks: state.delivery.weeks,
     days: state.delivery.days,
     warn: state.form.warn
@@ -54,9 +64,10 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
   
   function handleChange(type, data){
+    if (type === 'gestation') data = form.gestations[data];
     if (type === 'type') data = form.types[data];
-    if (type === 'induction_reason') data = form.inductions[data]
-    if (type === 'indication') data = form.indications[data]
+    if (type === 'induction_reason') data = form.inductions[data];
+    if (type === 'indication') data = form.indications[data];
     dispatch(updateField(type, data));
   }
 
