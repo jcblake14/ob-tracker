@@ -57,7 +57,7 @@ const mapDispatch = (dispatch) => {
       dispatch(getDeliveries(userId))
     },
     logInDemo(){
-      dispatch(auth(process.env.TEST_EMAIL, process.env.TEST_PASSWORD, 'Login'))
+      dispatch(auth(process.env.TEST_EMAIL, process.env.TEST_PASSWORD, 'signup'))
     }
   }
 }
