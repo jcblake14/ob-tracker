@@ -40,17 +40,6 @@ export function buildColumns(segment){
   return columns;
 }
 
-const colors = [theme.color1, theme.color2, theme.color3, '#FF6B6B', '#FFE66D', '#36A2EB', '#5D576B', '#FFFAE3', '#1A535C'];
-
-export function buildColors(columns){
-  const colorsObject = {}
-  columns.forEach((c, i) => {
-    colorsObject[c[0]] = colors[i]
-  });
-  return colorsObject;
-}
-
-
 
 // FORM.JS
 export function validate(data) {

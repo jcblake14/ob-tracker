@@ -4,31 +4,17 @@ import {connect} from 'react-redux'
 import history from '../history'
 import C3Chart from 'react-c3js';
 import {Container} from './styled'
-import {buildColumns, buildColors} from '../utils'
+import {buildColumns} from '../utils'
 import theme from '../theme'
 
 export default function Chart(props){
+  console.log('segment', props.segment)
 
   const columns= buildColumns(props.segment);
-  const length = columns.length;
-  const colors = [theme.color1, theme.color2, theme.color3, '#FF6B6B', '#FFE66D', '#36A2EB', '#5D576B', '#FFFAE3', '#1A535C'];
   
-  function generateColors(l){
-    let counter = 0;
-    return function(c, i){
-      counter++;
-      var idx = counter % l;
-      return colors[idx]
-    }
-  }
-  
-  const chooseColor = generateColors(length);
-
   const data = {
     type: 'donut',
     columns: columns,
-    color: chooseColor,
-    // colors: colors,
     onclick: function (d, i) {
       console.log(d)
       // history.push(`/home/segment/${props.name}/${d.id}`)
@@ -49,11 +35,14 @@ export default function Chart(props){
       }
     }
   }
+  const color = {
+    pattern: [theme.color1, theme.color2, theme.color3]
+  }
 
   return (
     <Container short center>
       <h3>{props.title}</h3>
-      {columns.length ? <C3Chart data={data} legend={legend} gauge={gauge} transition={transition} size={size} tooltip={tooltip} donut={donut}/> : null}
+      {columns.length ? <C3Chart data={data} legend={legend} gauge={gauge} transition={transition} size={size} tooltip={tooltip} donut={donut} color={color}/> : null}
     </Container>
   )
 }
