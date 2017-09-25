@@ -27596,8 +27596,7 @@ var mapDispatch = function mapDispatch(dispatch) {
       dispatch((0, _store.getDeliveries)(userId));
     },
     logInDemo: function logInDemo() {
-      console.log('email', process.env.TEST_EMAIL, 'password', process.env.TEST_PASSWORD);
-      dispatch((0, _store.auth)(process.env.TEST_EMAIL || 'obtrackertest@gmail.com', process.env.TEST_PASSWORD || 'obtrackertest1', 'signup'));
+      dispatch((0, _store.auth)(process.env.TEST_EMAIL || 'obtrackertest@gmail.com', process.env.TEST_PASSWORD || 'obtrackertest1', 'login'));
     }
   };
 };
