@@ -3762,7 +3762,7 @@ var form = exports.form = {
   gestations: ['single', 'double', '3+'],
   indications: ['breech position', 'failed induction', 'elective', 'repeat c-section', 'non-reassuring fetal heart tracing', 'abruption', 'pregnancy-induced hypertensive disorder', 'second stage arrest'],
   inductions: ['gestational hypertension', 'chronic hypertension', 'pre-eclampsia', 'sever pre-eclampsia', 'cholestasis', 'fetal anomalies', 'intrauterine growth restriction', 'abruption', 'HELLP syndrome', 'post dates', 'advanced maternal age', 'other'],
-  types: ['Natural', 'Operative', 'C-section'],
+  types: ['Vaginal', 'Vaginal operative', 'C-section'],
   positions: ['vertex', 'breech', 'transverse']
 
   // STORE
@@ -27145,11 +27145,7 @@ var AuthForm = function AuthForm(props) {
         { center: true },
         _react2.default.createElement(_styled.AuthInput, { border: true, name: 'email', placeholder: 'Email', onChange: handleChange }),
         _react2.default.createElement(_styled.AuthInput, { border: true, name: 'password', placeholder: 'Password', onChange: handleChange, type: 'password' }),
-        _react2.default.createElement(
-          _FlatButton2.default,
-          { type: 'submit', style: button },
-          'ENTER'
-        ),
+        _react2.default.createElement(_FlatButton2.default, { type: 'submit', style: button }),
         _react2.default.createElement(
           'p',
           null,
