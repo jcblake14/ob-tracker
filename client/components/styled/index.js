@@ -13,18 +13,6 @@ export const Container = styled.div`
   align-items: ${props => props.center ? 'center' : props.start ? 'flex-start' : ''};
 `;
 
-export const Panel = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: ${props => props.left ? theme.colorLeft : theme.colorRight};
-  width: 100%;
-  &:hover{
-    background-color: #DEE3E5;
-  }
-`
 
 export const IntroLink = styled(Link)`
   width: 100%;

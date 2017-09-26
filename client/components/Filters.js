@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import {setDate, clearDate} from '../store'
-import {Container, Sidebar} from './styled'
+import {Container} from './styled'
 import history from '../history'
 import {FilterDate, Sliders} from '../components'
 

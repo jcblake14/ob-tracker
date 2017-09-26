@@ -96,8 +96,8 @@ export const form = {
     'other'
   ],
   types: [
-    'Natural',
-    'Operative',
+    'Vaginal',
+    'Vaginal operative',
     'C-section'
   ],
   positions: [

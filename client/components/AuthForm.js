@@ -27,7 +27,7 @@ const AuthForm = (props) => {
       <Container center>
         <AuthInput border name="email" placeholder="Email" onChange={handleChange}></AuthInput>
         <AuthInput border name="password" placeholder="Password" onChange={handleChange} type="password"></AuthInput>
-        <FlatButton type="submit" style={button}>ENTER</FlatButton>
+        <FlatButton type="submit" style={button}></FlatButton>
         <p>- OR -</p>
         <a href="/auth/google"><img src="/btn_google_signin_light_normal_web.png"/></a>
         <AuthLink to="/signup">New to Ob Tracker? Click here to sign up.</AuthLink>

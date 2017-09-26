@@ -30,7 +30,8 @@ const theme2 = {
   color3: '#36A2EB',
   color4: '#FFFAE3',
   colorLeft: '#BCDBE5',
-  colorRight: '#C3C7C9'
+  colorRight: '#C3C7C9',
+  background: '#333439'
 }
 
-export default theme;
+export default theme2;

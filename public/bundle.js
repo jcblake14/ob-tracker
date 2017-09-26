@@ -1355,27 +1355,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Label = exports.AuthInput = exports.Input = exports.IntroNotify = exports.IntroLinks = exports.IntroBar = exports.SubTitle = exports.Title = exports.IntroCard = exports.Intro = exports.AuthLink = exports.Sidebar = exports.Warning = exports.Fieldset = exports.Bar = exports.IntroText = exports.IntroLink = exports.Panel = exports.Container = undefined;
+exports.Label = exports.AuthInput = exports.Input = exports.IntroNotify = exports.IntroLinks = exports.IntroBar = exports.SubTitle = exports.Title = exports.IntroCard = exports.Intro = exports.AuthLink = exports.Sidebar = exports.Warning = exports.Fieldset = exports.Bar = exports.IntroText = exports.IntroLink = exports.Container = undefined;
 
 var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: ', ';\n  flex-wrap : ', '\n  height: ', ';\n  text-align: ', ' ;\n  justify-content: ', ';\n  width: ', ';\n  align-items: ', ';\n'], ['\n  display: flex;\n  flex-direction: ', ';\n  flex-wrap : ', '\n  height: ', ';\n  text-align: ', ' ;\n  justify-content: ', ';\n  width: ', ';\n  align-items: ', ';\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  height: 100vh;\n  background-color: ', ';\n  width: 100%;\n  &:hover{\n    background-color: #DEE3E5;\n  }\n'], ['\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  height: 100vh;\n  background-color: ', ';\n  width: 100%;\n  &:hover{\n    background-color: #DEE3E5;\n  }\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n  width: 100%;\n'], ['\n  width: 100%;\n']),
-    _templateObject4 = _taggedTemplateLiteral(['\n  color: white;\n  font-size: 60px;\n'], ['\n  color: white;\n  font-size: 60px;\n']),
-    _templateObject5 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: row;\n  justify-content: ', ';\n  width: 100%;\n  height: 60px;\n  align-items: center;\n'], ['\n  display: flex;\n  flex-direction: row;\n  justify-content: ', ';\n  width: 100%;\n  height: 60px;\n  align-items: center;\n']),
-    _templateObject6 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n  justify-content: space-between;\n'], ['\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n  justify-content: space-between;\n']),
-    _templateObject7 = _taggedTemplateLiteral(['\n  color: red;\n'], ['\n  color: red;\n']),
-    _templateObject8 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: column;\n  padding: 0px 10px;\n  background: ', ';\n'], ['\n  display: flex;\n  flex-direction: column;\n  padding: 0px 10px;\n  background: ', ';\n']),
-    _templateObject9 = _taggedTemplateLiteral(['\n  margin-top: 20px;\n  color: grey;\n  font-size: 12px;\n  &:visited{\n    text-decoration: none;\n  }\n  &:active{\n    text-decoration: none;\n  }\n  &:hover{\n    text-decoration: none;\n  }\n'], ['\n  margin-top: 20px;\n  color: grey;\n  font-size: 12px;\n  &:visited{\n    text-decoration: none;\n  }\n  &:active{\n    text-decoration: none;\n  }\n  &:hover{\n    text-decoration: none;\n  }\n']),
-    _templateObject10 = _taggedTemplateLiteral(['\n  display: flex;\n  height: 100vh;\n  width: 100vw;\n  justify-content: center;\n  align-items: center;\n  background-color: ', ';\n  color: ', ';\n'], ['\n  display: flex;\n  height: 100vh;\n  width: 100vw;\n  justify-content: center;\n  align-items: center;\n  background-color: ', ';\n  color: ', ';\n']),
-    _templateObject11 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: column;\n  height: 80vh;\n  width: 80vw;\n  justify-content: space-between;\n  align-items: center;\n\n  box-sizing: border-box;\n  padding: 20px;\n  background-color: white;\n  border-radius: 3px;\n  box-shadow: 0 12px 38px black;\n'], ['\n  display: flex;\n  flex-direction: column;\n  height: 80vh;\n  width: 80vw;\n  justify-content: space-between;\n  align-items: center;\n\n  box-sizing: border-box;\n  padding: 20px;\n  background-color: white;\n  border-radius: 3px;\n  box-shadow: 0 12px 38px black;\n']),
-    _templateObject12 = _taggedTemplateLiteral(['\n  color: ', ';\n  font-size: 60px;\n  letter-spacing: 8px;\n  text-shadow: 2px 2px ', ';\n  margin: 50px 0px 0px 0px;\n'], ['\n  color: ', ';\n  font-size: 60px;\n  letter-spacing: 8px;\n  text-shadow: 2px 2px ', ';\n  margin: 50px 0px 0px 0px;\n']),
-    _templateObject13 = _taggedTemplateLiteral(['\n  color: ', ';\n  font-size: 20px;\n  letter-spacing: 2px;\n  text-shadow: 1px 1px ', ';\n  margin: 0px;\n'], ['\n  color: ', ';\n  font-size: 20px;\n  letter-spacing: 2px;\n  text-shadow: 1px 1px ', ';\n  margin: 0px;\n']),
-    _templateObject14 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n  height: 60px;\n  justify-content: space-between;\n  align-items: center;\n'], ['\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n  height: 60px;\n  justify-content: space-between;\n  align-items: center;\n']),
-    _templateObject15 = _taggedTemplateLiteral(['\n  color: ', ';\n  font-family: Montserrat;\n  width: ', '\n'], ['\n  color: ', ';\n  font-family: Montserrat;\n  width: ', '\n']),
-    _templateObject16 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  border: 2px solid ', ';\n  border-radius: 2px;\n'], ['\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  border: 2px solid ', ';\n  border-radius: 2px;\n']),
-    _templateObject17 = _taggedTemplateLiteral(['\n  width: 200px;\n  border: 0px;\n  border-radius: 2px;\n  padding: 10px;\n  color: ', ';\n  &::placeholder{\n    color: ', ';\n  }\n'], ['\n  width: 200px;\n  border: 0px;\n  border-radius: 2px;\n  padding: 10px;\n  color: ', ';\n  &::placeholder{\n    color: ', ';\n  }\n']),
-    _templateObject18 = _taggedTemplateLiteral(['\n  width: 180px;\n  border: 2px solid ', ';\n  border-radius: 2px;\n  padding: 10px;\n  margin: 10px 0px;\n  color: ', ';\n  &::placeholder{\n    color: ', ';\n  }\n'], ['\n  width: 180px;\n  border: 2px solid ', ';\n  border-radius: 2px;\n  padding: 10px;\n  margin: 10px 0px;\n  color: ', ';\n  &::placeholder{\n    color: ', ';\n  }\n']),
-    _templateObject19 = _taggedTemplateLiteral(['\n  margin-top: 0px;\n  margin-bottom: 5px;\n'], ['\n  margin-top: 0px;\n  margin-bottom: 5px;\n']);
+    _templateObject2 = _taggedTemplateLiteral(['\n  width: 100%;\n'], ['\n  width: 100%;\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n  color: white;\n  font-size: 60px;\n'], ['\n  color: white;\n  font-size: 60px;\n']),
+    _templateObject4 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: row;\n  justify-content: ', ';\n  width: 100%;\n  height: 60px;\n  align-items: center;\n'], ['\n  display: flex;\n  flex-direction: row;\n  justify-content: ', ';\n  width: 100%;\n  height: 60px;\n  align-items: center;\n']),
+    _templateObject5 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n  justify-content: space-between;\n'], ['\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n  justify-content: space-between;\n']),
+    _templateObject6 = _taggedTemplateLiteral(['\n  color: red;\n'], ['\n  color: red;\n']),
+    _templateObject7 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: column;\n  padding: 0px 10px;\n  background: ', ';\n'], ['\n  display: flex;\n  flex-direction: column;\n  padding: 0px 10px;\n  background: ', ';\n']),
+    _templateObject8 = _taggedTemplateLiteral(['\n  margin-top: 20px;\n  color: grey;\n  font-size: 12px;\n  &:visited{\n    text-decoration: none;\n  }\n  &:active{\n    text-decoration: none;\n  }\n  &:hover{\n    text-decoration: none;\n  }\n'], ['\n  margin-top: 20px;\n  color: grey;\n  font-size: 12px;\n  &:visited{\n    text-decoration: none;\n  }\n  &:active{\n    text-decoration: none;\n  }\n  &:hover{\n    text-decoration: none;\n  }\n']),
+    _templateObject9 = _taggedTemplateLiteral(['\n  display: flex;\n  height: 100vh;\n  width: 100vw;\n  justify-content: center;\n  align-items: center;\n  background-color: ', ';\n  color: ', ';\n'], ['\n  display: flex;\n  height: 100vh;\n  width: 100vw;\n  justify-content: center;\n  align-items: center;\n  background-color: ', ';\n  color: ', ';\n']),
+    _templateObject10 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: column;\n  height: 80vh;\n  width: 80vw;\n  justify-content: space-between;\n  align-items: center;\n\n  box-sizing: border-box;\n  padding: 20px;\n  background-color: white;\n  border-radius: 3px;\n  box-shadow: 0 12px 38px black;\n'], ['\n  display: flex;\n  flex-direction: column;\n  height: 80vh;\n  width: 80vw;\n  justify-content: space-between;\n  align-items: center;\n\n  box-sizing: border-box;\n  padding: 20px;\n  background-color: white;\n  border-radius: 3px;\n  box-shadow: 0 12px 38px black;\n']),
+    _templateObject11 = _taggedTemplateLiteral(['\n  color: ', ';\n  font-size: 60px;\n  letter-spacing: 8px;\n  text-shadow: 2px 2px ', ';\n  margin: 50px 0px 0px 0px;\n'], ['\n  color: ', ';\n  font-size: 60px;\n  letter-spacing: 8px;\n  text-shadow: 2px 2px ', ';\n  margin: 50px 0px 0px 0px;\n']),
+    _templateObject12 = _taggedTemplateLiteral(['\n  color: ', ';\n  font-size: 20px;\n  letter-spacing: 2px;\n  text-shadow: 1px 1px ', ';\n  margin: 0px;\n'], ['\n  color: ', ';\n  font-size: 20px;\n  letter-spacing: 2px;\n  text-shadow: 1px 1px ', ';\n  margin: 0px;\n']),
+    _templateObject13 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n  height: 60px;\n  justify-content: space-between;\n  align-items: center;\n'], ['\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n  height: 60px;\n  justify-content: space-between;\n  align-items: center;\n']),
+    _templateObject14 = _taggedTemplateLiteral(['\n  color: ', ';\n  font-family: Montserrat;\n  width: ', '\n'], ['\n  color: ', ';\n  font-family: Montserrat;\n  width: ', '\n']),
+    _templateObject15 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  border: 2px solid ', ';\n  border-radius: 2px;\n'], ['\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  border: 2px solid ', ';\n  border-radius: 2px;\n']),
+    _templateObject16 = _taggedTemplateLiteral(['\n  width: 200px;\n  border: 0px;\n  border-radius: 2px;\n  padding: 10px;\n  color: ', ';\n  &::placeholder{\n    color: ', ';\n  }\n'], ['\n  width: 200px;\n  border: 0px;\n  border-radius: 2px;\n  padding: 10px;\n  color: ', ';\n  &::placeholder{\n    color: ', ';\n  }\n']),
+    _templateObject17 = _taggedTemplateLiteral(['\n  width: 180px;\n  border: 2px solid ', ';\n  border-radius: 2px;\n  padding: 10px;\n  margin: 10px 0px;\n  color: ', ';\n  &::placeholder{\n    color: ', ';\n  }\n'], ['\n  width: 180px;\n  border: 2px solid ', ';\n  border-radius: 2px;\n  padding: 10px;\n  margin: 10px 0px;\n  color: ', ';\n  &::placeholder{\n    color: ', ';\n  }\n']),
+    _templateObject18 = _taggedTemplateLiteral(['\n  margin-top: 0px;\n  margin-bottom: 5px;\n'], ['\n  margin-top: 0px;\n  margin-bottom: 5px;\n']);
 
 var _styledComponents = __webpack_require__(681);
 
@@ -1407,46 +1406,42 @@ var Container = exports.Container = _styledComponents2.default.div(_templateObje
   return props.center ? 'center' : props.start ? 'flex-start' : '';
 });
 
-var Panel = exports.Panel = _styledComponents2.default.div(_templateObject2, function (props) {
-  return props.left ? _theme2.default.colorLeft : _theme2.default.colorRight;
-});
+var IntroLink = exports.IntroLink = (0, _styledComponents2.default)(_reactRouterDom.Link)(_templateObject2);
 
-var IntroLink = exports.IntroLink = (0, _styledComponents2.default)(_reactRouterDom.Link)(_templateObject3);
+var IntroText = exports.IntroText = _styledComponents2.default.h1(_templateObject3);
 
-var IntroText = exports.IntroText = _styledComponents2.default.h1(_templateObject4);
-
-var Bar = exports.Bar = _styledComponents2.default.div(_templateObject5, function (props) {
+var Bar = exports.Bar = _styledComponents2.default.div(_templateObject4, function (props) {
   return props.justify;
 });
 
-var Fieldset = exports.Fieldset = _styledComponents2.default.div(_templateObject6);
+var Fieldset = exports.Fieldset = _styledComponents2.default.div(_templateObject5);
 
-var Warning = exports.Warning = _styledComponents2.default.h5(_templateObject7);
+var Warning = exports.Warning = _styledComponents2.default.h5(_templateObject6);
 
-var Sidebar = exports.Sidebar = _styledComponents2.default.div(_templateObject8, _theme2.default.color4);
+var Sidebar = exports.Sidebar = _styledComponents2.default.div(_templateObject7, _theme2.default.color4);
 
-var AuthLink = exports.AuthLink = (0, _styledComponents2.default)(_reactRouterDom.Link)(_templateObject9);
+var AuthLink = exports.AuthLink = (0, _styledComponents2.default)(_reactRouterDom.Link)(_templateObject8);
 
-var Intro = exports.Intro = _styledComponents2.default.div(_templateObject10, _theme2.default.color5, _theme2.default.color1);
-var IntroCard = exports.IntroCard = _styledComponents2.default.div(_templateObject11);
+var Intro = exports.Intro = _styledComponents2.default.div(_templateObject9, _theme2.default.color5, _theme2.default.color1);
+var IntroCard = exports.IntroCard = _styledComponents2.default.div(_templateObject10);
 
-var Title = exports.Title = _styledComponents2.default.h1(_templateObject12, _theme2.default.color1, _theme2.default.color5a);
+var Title = exports.Title = _styledComponents2.default.h1(_templateObject11, _theme2.default.color1, _theme2.default.color5a);
 
-var SubTitle = exports.SubTitle = _styledComponents2.default.h1(_templateObject13, _theme2.default.color1, _theme2.default.color5a);
+var SubTitle = exports.SubTitle = _styledComponents2.default.h1(_templateObject12, _theme2.default.color1, _theme2.default.color5a);
 
-var IntroBar = exports.IntroBar = _styledComponents2.default.div(_templateObject14);
+var IntroBar = exports.IntroBar = _styledComponents2.default.div(_templateObject13);
 
-var IntroLinks = exports.IntroLinks = (0, _styledComponents2.default)(_reactRouterDom.Link)(_templateObject15, _theme2.default.color5, function (props) {
+var IntroLinks = exports.IntroLinks = (0, _styledComponents2.default)(_reactRouterDom.Link)(_templateObject14, _theme2.default.color5, function (props) {
   return props.width || '';
 });
 
-var IntroNotify = exports.IntroNotify = _styledComponents2.default.div(_templateObject16, _theme2.default.color5a);
+var IntroNotify = exports.IntroNotify = _styledComponents2.default.div(_templateObject15, _theme2.default.color5a);
 
-var Input = exports.Input = _styledComponents2.default.input(_templateObject17, _theme2.default.color5, _theme2.default.color5);
+var Input = exports.Input = _styledComponents2.default.input(_templateObject16, _theme2.default.color5, _theme2.default.color5);
 
-var AuthInput = exports.AuthInput = _styledComponents2.default.input(_templateObject18, _theme2.default.color5a, _theme2.default.color5, _theme2.default.color5);
+var AuthInput = exports.AuthInput = _styledComponents2.default.input(_templateObject17, _theme2.default.color5a, _theme2.default.color5, _theme2.default.color5);
 
-var Label = exports.Label = _styledComponents2.default.h4(_templateObject19);
+var Label = exports.Label = _styledComponents2.default.h4(_templateObject18);
 
 /***/ }),
 /* 25 */
@@ -6488,10 +6483,11 @@ var theme2 = {
   color3: '#36A2EB',
   color4: '#FFFAE3',
   colorLeft: '#BCDBE5',
-  colorRight: '#C3C7C9'
+  colorRight: '#C3C7C9',
+  background: '#333439'
 };
 
-exports.default = theme;
+exports.default = theme2;
 
 /***/ }),
 /* 70 */
