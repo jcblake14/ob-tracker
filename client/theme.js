@@ -31,7 +31,13 @@ const theme2 = {
   color4: '#FFFAE3',
   colorLeft: '#BCDBE5',
   colorRight: '#C3C7C9',
-  background: '#333439'
+  sidebar: '#5B6D8C',
+  sidebar1: '#EDF2F6',
+  sidebar2: '#BFBFBF',
+  content: '#EDF2F6',
+  navbar: '#354052'
 }
+
+
 
 export default theme2;

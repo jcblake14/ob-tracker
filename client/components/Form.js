@@ -7,7 +7,7 @@ import FlatButton from 'material-ui/FlatButton';
 import {Card, CardTitle, CardActions} from 'material-ui/Card';
 import {Container, Fieldset, Warning} from './styled'
 import {form, validate} from '../utils'
-import {DeliveryDate, Information, Gestation, Delivery} from '../components'
+import {DeliveryDate, Information, Gestation, Delivery, Navbar} from '../components'
 
 const style = {
   width: '40vw',
@@ -20,23 +20,26 @@ const Form = (props) => {
   const {warn, handleClick} = props
 
   return (
-    <Container row fullWidth>
-      <Card style={style}>
-        <CardTitle title="Add Delivery" />
-        <CardActions>
+    <Container>
+      <Navbar />
+      <Container row fullWidth>
+        <Card style={style}>
+          <CardTitle title="Add Delivery" />
+          <CardActions>
 
-          <DeliveryDate validations={validate(props)} />
-          <Information validations={validate(props)} />
-          <Gestation validations={validate(props)} />
-          <Delivery validations={validate(props)} />
+            <DeliveryDate validations={validate(props)} />
+            <Information validations={validate(props)} />
+            <Gestation validations={validate(props)} />
+            <Delivery validations={validate(props)} />
 
-          <Container center>
-            {warn && !validate(props) ? <Warning>Please complete the required fields</Warning> : null}
-            <FlatButton label="Submit" primary={true} onClick={(e) => handleClick(e, validate(props))}/>
-          </Container>
+            <Container center>
+              {warn && !validate(props) ? <Warning>Please complete the required fields</Warning> : null}
+              <FlatButton label="Submit" primary={true} onClick={(e) => handleClick(e, validate(props))}/>
+            </Container>
 
-        </CardActions>
-      </Card>
+          </CardActions>
+        </Card>
+      </Container>
     </Container>
   )
 }

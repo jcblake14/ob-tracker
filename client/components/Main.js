@@ -4,14 +4,16 @@ import {connect} from 'react-redux'
 import {withRouter, Link} from 'react-router-dom'
 import {logout} from '../store'
 import {Navbar} from '../components'
+import {Container} from './styled'
+import theme from '../theme'
 
 const Main = (props) => {
   const {children, handleClick, isLoggedIn} = props
 
   return (
-    <div>
+    <Container style={{backgroundColor: theme.content, minHeight: '100vh'}}>
       {children}
-    </div>
+    </Container>
   )
 }
 

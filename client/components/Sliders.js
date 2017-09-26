@@ -10,8 +10,8 @@ import InputRange from 'react-input-range';
 function Sliders(props){
   const {filters, handleChange} = props;
   return (
-    <Container style={{padding: '0px 20px'}}>
-      <SideTitle>Filters</SideTitle>
+    <Container style={{padding: '0px 32px'}}>
+      <SideTitle lower>Filters</SideTitle>
       {filters && 
         <Container>
           <Slider name={'patient_age'} title={'Age'}/>

@@ -8,7 +8,7 @@ export const Container = styled.div`
   flex-wrap : ${props => props.wrap ? 'wrap' : ''}
   height: ${props => props.row || props.short ? '' : '100%'};
   text-align: ${props => props.center ? 'center' : ''} ;
-  justify-content: ${props => props.fullWidth ? 'center' : ''};
+  justify-content: center;
   width: ${props => props.fullWidth ? '100vw' : props.width || ''};
   align-items: ${props => props.center ? 'center' : props.start ? 'flex-start' : ''};
 `;
@@ -16,23 +16,27 @@ export const Container = styled.div`
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #EDF2F6;
+  background-color: ${theme.content};
   width: 100%;
   height: 100%;
-  min-height: 100vh;
+  align-self: stretch;
   align-items: center;
 `
 
 export const Side = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #354052;
-  color: #B8C3D6;
+  background-color: ${theme.sidebar};
+  color: ${theme.sidebar1};
+  box-shadow: 0px 0px 12px #2B2B2B;
+  z-index: 1;
 `;
 
 export const SideTitle = styled.h3`
   text-align: center;
   font-weight: normal;
+  color: ${theme.sidebar1}
+  margin-bottom: ${props => props.lower ? '-14px' : props.header ? '' : '6px'};
 `
 
 export const Bar = styled.div`
@@ -42,7 +46,7 @@ export const Bar = styled.div`
   width: 100%;
   height: 60px;
   align-items: center;
-  background-color: ${props => props.nav ? 'white' : 'white'}
+  background-color: ${props => props.nav ? theme.navbar : theme.navbar}
 `;
 
 export const Fieldset = styled.div`
@@ -159,6 +163,8 @@ export const AuthInput = styled.input`
 
 export const Label = styled.h5`
   margin-top: 0px;
+  margin-left: -9px;
   margin-bottom: 5px;
   font-weight: normal;
+  font-family: Roboto;
 `

@@ -8,8 +8,6 @@ import {buildColumns} from '../utils'
 import theme from '../theme'
 
 export default function Chart(props){
-  console.log('segment', props.segment)
-
   const columns= buildColumns(props.segment);
   
   const data = {

@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import {newSort} from '../store'
 import {Container} from './styled'
+import theme from '../theme'
 
 // Material UI imports
 import IconButton from 'material-ui/IconButton';
@@ -16,6 +17,9 @@ import {
   TableRowColumn,
 } from 'material-ui/Table';
 
+const style={
+  backgroundColor: theme.content
+}
 
 function DeliveriesTable(props){
   let {handleClick, segment, sortTable} = props;
@@ -42,8 +46,7 @@ function DeliveriesTable(props){
 
   return (
     <Container short center>
-      <h1>Deliveries</h1>
-      <Table>
+      <Table style={style} multiSelectable={true}>
         <TableHeader>
           <TableRow>
             <TableHeaderColumn>Date<SortButton column="date"/></TableHeaderColumn>

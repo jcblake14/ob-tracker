@@ -1,21 +1,31 @@
 body {
   font-family: 'Montserrat';
+  margin: 0px;
+}
 
-  a {
-    text-decoration: none;
-  }
+h1, h2, h3, h4, h4 {
+  font-family: 'Montserrat'
+}
 
-  label {
-    display: block;
-  }
+a {
+  font-family: 'Montserrat'  
+}
 
-  nav a {
-    display: inline-block;
-    margin: 1em;
-  }
+/* CSS TRANSITIONS */ 
+.fade-appear {
+  opacity: 0.01;
+}
 
-  form div {
-    margin: 1em;
-    display: inline-block;
-  }
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.fade-leave {
+  opacity: 1;
+}
+
+.fade-leave.fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }

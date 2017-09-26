@@ -5,6 +5,7 @@ import {withRouter} from 'react-router-dom'
 import {setDate, clearDate} from '../store'
 import {Container, SideTitle} from './styled'
 import history from '../history'
+import theme from '../theme'
 
 // Material UI imports
 import RaisedButton from 'material-ui/RaisedButton';
@@ -17,12 +18,14 @@ const style = {
 const datePickerStyle = {
   width: '100%',
   paddingLeft: '16px',
-  margin: '0px 10px'
+  margin: '0px 10px',
+  color: theme.sidebar1,
+  fontFamily: 'Montserrat'
 }
 
 function FilterDate(props){
   return (
-    <Container>
+    <Container style={{padding: '0px 16px'}}>
       <SideTitle>Limit by Date</SideTitle>
       <Container>
         <RaisedButton label="Last 7 Days" style={style} onClick={(e) => props.handleClick(e, 7)}/>
@@ -30,7 +33,7 @@ function FilterDate(props){
         <RaisedButton label="This Year (beta)" style={style} disabled={true}/>
         <DatePicker hintText="Start Date" mode="landscape" value={props.start} hintStyle={datePickerStyle} inputStyle={datePickerStyle} style={style} onChange={(e, d) => props.handleDate(e, d, 'start')}/>
         <DatePicker hintText="End Date" mode="landscape" value={props.end} hintStyle={datePickerStyle} inputStyle={datePickerStyle} style={style} onChange={(e, d) => props.handleDate(e, d, 'end')}/>   
-        <RaisedButton label="Clear" style={style} secondary={true} disabled={!props.start && !props.end} onClick={props.handleClick} />  
+        <RaisedButton label="Clear Date" style={style} secondary={true} disabled={!props.start && !props.end} onClick={props.handleClick} />  
       </Container>
     </Container>
   )

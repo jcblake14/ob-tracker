@@ -8,8 +8,9 @@ import range from './range'
 import form from './form'
 import filters from './filters'
 import sortTable from './sort'
+import tab from './tab'
 
-const reducer = combineReducers({user, delivery, deliveries, range, form, filters, sortTable})
+const reducer = combineReducers({user, delivery, deliveries, range, form, filters, sortTable, tab})
 const middleware = applyMiddleware(thunkMiddleware, createLogger({collapsed: true}))
 const store = createStore(reducer, middleware)
 
@@ -21,3 +22,4 @@ export * from './range'
 export * from './form'
 export * from './filters'
 export * from './sort'
+export * from './tab'
