@@ -43,13 +43,6 @@ export const Warning = styled.h5`
   color: red;
 `
 
-export const Sidebar = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 0px 10px;
-  background: ${theme.color4};
-`
-
 export const AuthLink = styled(Link)`
   margin-top: 20px;
   color: grey;
