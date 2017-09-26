@@ -35,7 +35,9 @@ const theme2 = {
   sidebar1: '#EDF2F6',
   sidebar2: '#BFBFBF',
   content: '#EDF2F6',
-  navbar: '#354052'
+  navbar: '#354052',
+  comingSoon: '#A8C0EA',
+  comingSoon1: '#5B6D8C'
 }
 
 

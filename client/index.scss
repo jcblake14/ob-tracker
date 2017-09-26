@@ -7,9 +7,11 @@ h1, h2, h3, h4, h4 {
   font-family: 'Montserrat'
 }
 
-a {
-  font-family: 'Montserrat'  
+a, a:hover, a:visited, a:link {
+  font-family: 'Montserrat';
+  text-decoration: none;
 }
+
 
 /* CSS TRANSITIONS */ 
 .fade-appear {

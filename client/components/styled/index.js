@@ -8,7 +8,7 @@ export const Container = styled.div`
   flex-wrap : ${props => props.wrap ? 'wrap' : ''}
   height: ${props => props.row || props.short ? '' : '100%'};
   text-align: ${props => props.center ? 'center' : ''} ;
-  justify-content: center;
+  justify-content: ${props => props.fullWidth ? 'center' : ''};
   width: ${props => props.fullWidth ? '100vw' : props.width || ''};
   align-items: ${props => props.center ? 'center' : props.start ? 'flex-start' : ''};
 `;
@@ -81,8 +81,8 @@ export const Intro = styled.div`
   width: 100vw;
   justify-content: center;
   align-items: center;
-  background-color: ${theme.color5};
-  color: ${theme.color1};
+  background-color: ${theme.comingSoon1};
+  color: ${theme.sidebar};
 `
 export const IntroCard = styled.div`
   display: flex;
@@ -100,18 +100,18 @@ export const IntroCard = styled.div`
 `;
 
 export const Title = styled.h1`
-  color: ${theme.color1};
+  color: ${theme.comingSoon};
   font-size: 60px;
   letter-spacing: 8px;
-  text-shadow: 2px 2px ${theme.color5a};
+  text-shadow: 2px 2px ${theme.comingSoon1};
   margin: 50px 0px 0px 0px;
 `
 
 export const SubTitle = styled.h1`
-  color: ${theme.color1};
+  color: ${theme.comingSoon};
   font-size: 20px;
   letter-spacing: 2px;
-  text-shadow: 1px 1px ${theme.color5a};
+  text-shadow: 1px 1px ${theme.comingSoon1};
   margin: 0px;
 `
 
@@ -125,16 +125,19 @@ export const IntroBar = styled.div`
 `;
 
 export const IntroLinks = styled(Link)`
-  color: ${theme.color5};
+  color: ${theme.sidebar};
   font-family: Montserrat;
-  width: ${props => props.width || ''}
+  width: ${props => props.width || ''};
+  &:visited: {
+    text-decoration: none;
+  }
 `
 
 export const IntroNotify = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border: 2px solid ${theme.color5a};
+  border: 2px solid ${theme.comingSoon};
   border-radius: 2px;
 `
 

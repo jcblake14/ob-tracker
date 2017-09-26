@@ -24,7 +24,7 @@ const right = {
 }
 
 const notify = {
-  backgroundColor: theme.color5a,
+  backgroundColor: theme.comingSoon,
   color: 'white',
   fontFamily: 'Montserrat',
   fontWeight: 'bold',
@@ -33,7 +33,7 @@ const notify = {
 }
 
 const demo = {
-  backgroundColor: theme.color5a,
+  backgroundColor: theme.comingSoon,
   color: 'white',
   fontFamily: 'Montserrat',
   fontWeight: 'bold',  
