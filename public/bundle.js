@@ -1355,15 +1355,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Label = exports.AuthInput = exports.Input = exports.IntroNotify = exports.IntroLinks = exports.IntroBar = exports.SubTitle = exports.Title = exports.IntroCard = exports.Intro = exports.AuthLink = exports.Sidebar = exports.Warning = exports.Fieldset = exports.Bar = exports.IntroText = exports.IntroLink = exports.Container = undefined;
+exports.Label = exports.AuthInput = exports.Input = exports.IntroNotify = exports.IntroLinks = exports.IntroBar = exports.SubTitle = exports.Title = exports.IntroCard = exports.Intro = exports.AuthLink = exports.Warning = exports.Fieldset = exports.Bar = exports.SideTitle = exports.Side = exports.Content = exports.Container = undefined;
 
 var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: ', ';\n  flex-wrap : ', '\n  height: ', ';\n  text-align: ', ' ;\n  justify-content: ', ';\n  width: ', ';\n  align-items: ', ';\n'], ['\n  display: flex;\n  flex-direction: ', ';\n  flex-wrap : ', '\n  height: ', ';\n  text-align: ', ' ;\n  justify-content: ', ';\n  width: ', ';\n  align-items: ', ';\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n  width: 100%;\n'], ['\n  width: 100%;\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n  color: white;\n  font-size: 60px;\n'], ['\n  color: white;\n  font-size: 60px;\n']),
-    _templateObject4 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: row;\n  justify-content: ', ';\n  width: 100%;\n  height: 60px;\n  align-items: center;\n'], ['\n  display: flex;\n  flex-direction: row;\n  justify-content: ', ';\n  width: 100%;\n  height: 60px;\n  align-items: center;\n']),
-    _templateObject5 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n  justify-content: space-between;\n'], ['\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n  justify-content: space-between;\n']),
-    _templateObject6 = _taggedTemplateLiteral(['\n  color: red;\n'], ['\n  color: red;\n']),
-    _templateObject7 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: column;\n  padding: 0px 10px;\n  background: ', ';\n'], ['\n  display: flex;\n  flex-direction: column;\n  padding: 0px 10px;\n  background: ', ';\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: column;\n  background-color: #EDF2F6;\n  width: 100%;\n  height: 100%;\n  min-height: 100vh;\n  align-items: center;\n'], ['\n  display: flex;\n  flex-direction: column;\n  background-color: #EDF2F6;\n  width: 100%;\n  height: 100%;\n  min-height: 100vh;\n  align-items: center;\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: column;\n  background-color: #354052;\n  color: #B8C3D6;\n'], ['\n  display: flex;\n  flex-direction: column;\n  background-color: #354052;\n  color: #B8C3D6;\n']),
+    _templateObject4 = _taggedTemplateLiteral(['\n  text-align: center;\n  font-weight: normal;\n'], ['\n  text-align: center;\n  font-weight: normal;\n']),
+    _templateObject5 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: row;\n  justify-content: ', ';\n  width: 100%;\n  height: 60px;\n  align-items: center;\n  background-color: ', '\n'], ['\n  display: flex;\n  flex-direction: row;\n  justify-content: ', ';\n  width: 100%;\n  height: 60px;\n  align-items: center;\n  background-color: ', '\n']),
+    _templateObject6 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n  justify-content: space-between;\n'], ['\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n  justify-content: space-between;\n']),
+    _templateObject7 = _taggedTemplateLiteral(['\n  color: red;\n'], ['\n  color: red;\n']),
     _templateObject8 = _taggedTemplateLiteral(['\n  margin-top: 20px;\n  color: grey;\n  font-size: 12px;\n  &:visited{\n    text-decoration: none;\n  }\n  &:active{\n    text-decoration: none;\n  }\n  &:hover{\n    text-decoration: none;\n  }\n'], ['\n  margin-top: 20px;\n  color: grey;\n  font-size: 12px;\n  &:visited{\n    text-decoration: none;\n  }\n  &:active{\n    text-decoration: none;\n  }\n  &:hover{\n    text-decoration: none;\n  }\n']),
     _templateObject9 = _taggedTemplateLiteral(['\n  display: flex;\n  height: 100vh;\n  width: 100vw;\n  justify-content: center;\n  align-items: center;\n  background-color: ', ';\n  color: ', ';\n'], ['\n  display: flex;\n  height: 100vh;\n  width: 100vw;\n  justify-content: center;\n  align-items: center;\n  background-color: ', ';\n  color: ', ';\n']),
     _templateObject10 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: column;\n  height: 80vh;\n  width: 80vw;\n  justify-content: space-between;\n  align-items: center;\n\n  box-sizing: border-box;\n  padding: 20px;\n  background-color: white;\n  border-radius: 3px;\n  box-shadow: 0 12px 38px black;\n'], ['\n  display: flex;\n  flex-direction: column;\n  height: 80vh;\n  width: 80vw;\n  justify-content: space-between;\n  align-items: center;\n\n  box-sizing: border-box;\n  padding: 20px;\n  background-color: white;\n  border-radius: 3px;\n  box-shadow: 0 12px 38px black;\n']),
@@ -1374,7 +1374,7 @@ var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direct
     _templateObject15 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  border: 2px solid ', ';\n  border-radius: 2px;\n'], ['\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  border: 2px solid ', ';\n  border-radius: 2px;\n']),
     _templateObject16 = _taggedTemplateLiteral(['\n  width: 200px;\n  border: 0px;\n  border-radius: 2px;\n  padding: 10px;\n  color: ', ';\n  &::placeholder{\n    color: ', ';\n  }\n'], ['\n  width: 200px;\n  border: 0px;\n  border-radius: 2px;\n  padding: 10px;\n  color: ', ';\n  &::placeholder{\n    color: ', ';\n  }\n']),
     _templateObject17 = _taggedTemplateLiteral(['\n  width: 180px;\n  border: 2px solid ', ';\n  border-radius: 2px;\n  padding: 10px;\n  margin: 10px 0px;\n  color: ', ';\n  &::placeholder{\n    color: ', ';\n  }\n'], ['\n  width: 180px;\n  border: 2px solid ', ';\n  border-radius: 2px;\n  padding: 10px;\n  margin: 10px 0px;\n  color: ', ';\n  &::placeholder{\n    color: ', ';\n  }\n']),
-    _templateObject18 = _taggedTemplateLiteral(['\n  margin-top: 0px;\n  margin-bottom: 5px;\n'], ['\n  margin-top: 0px;\n  margin-bottom: 5px;\n']);
+    _templateObject18 = _taggedTemplateLiteral(['\n  margin-top: 0px;\n  margin-bottom: 5px;\n  font-weight: normal;\n'], ['\n  margin-top: 0px;\n  margin-bottom: 5px;\n  font-weight: normal;\n']);
 
 var _styledComponents = __webpack_require__(681);
 
@@ -1406,19 +1406,21 @@ var Container = exports.Container = _styledComponents2.default.div(_templateObje
   return props.center ? 'center' : props.start ? 'flex-start' : '';
 });
 
-var IntroLink = exports.IntroLink = (0, _styledComponents2.default)(_reactRouterDom.Link)(_templateObject2);
+var Content = exports.Content = _styledComponents2.default.div(_templateObject2);
 
-var IntroText = exports.IntroText = _styledComponents2.default.h1(_templateObject3);
+var Side = exports.Side = _styledComponents2.default.div(_templateObject3);
 
-var Bar = exports.Bar = _styledComponents2.default.div(_templateObject4, function (props) {
-  return props.justify;
+var SideTitle = exports.SideTitle = _styledComponents2.default.h3(_templateObject4);
+
+var Bar = exports.Bar = _styledComponents2.default.div(_templateObject5, function (props) {
+  return props.nav ? 'flex-end' : 'center';
+}, function (props) {
+  return props.nav ? 'white' : 'white';
 });
 
-var Fieldset = exports.Fieldset = _styledComponents2.default.div(_templateObject5);
+var Fieldset = exports.Fieldset = _styledComponents2.default.div(_templateObject6);
 
-var Warning = exports.Warning = _styledComponents2.default.h5(_templateObject6);
-
-var Sidebar = exports.Sidebar = _styledComponents2.default.div(_templateObject7, _theme2.default.color4);
+var Warning = exports.Warning = _styledComponents2.default.h5(_templateObject7);
 
 var AuthLink = exports.AuthLink = (0, _styledComponents2.default)(_reactRouterDom.Link)(_templateObject8);
 
@@ -1441,7 +1443,7 @@ var Input = exports.Input = _styledComponents2.default.input(_templateObject16, 
 
 var AuthInput = exports.AuthInput = _styledComponents2.default.input(_templateObject17, _theme2.default.color5a, _theme2.default.color5, _theme2.default.color5);
 
-var Label = exports.Label = _styledComponents2.default.h4(_templateObject18);
+var Label = exports.Label = _styledComponents2.default.h5(_templateObject18);
 
 /***/ }),
 /* 25 */
@@ -3564,12 +3566,12 @@ Object.defineProperty(exports, 'Table', {
   }
 });
 
-var _Filters = __webpack_require__(294);
+var _Sidebar = __webpack_require__(690);
 
-Object.defineProperty(exports, 'Filters', {
+Object.defineProperty(exports, 'Sidebar', {
   enumerable: true,
   get: function get() {
-    return _interopRequireDefault(_Filters).default;
+    return _interopRequireDefault(_Sidebar).default;
   }
 });
 
@@ -25980,16 +25982,11 @@ var Routes = function (_Component) {
             _reactRouterDom.Switch,
             null,
             isLoggedIn ? _react2.default.createElement(
-              _components.Main,
+              _reactRouterDom.Switch,
               null,
-              _react2.default.createElement(_components.Navbar, null),
-              _react2.default.createElement(
-                _reactRouterDom.Switch,
-                null,
-                _react2.default.createElement(_reactRouterDom.Route, { path: '/new', component: _components.Form }),
-                _react2.default.createElement(_reactRouterDom.Route, { path: '/home/segment/', component: _components.Dashboard }),
-                _react2.default.createElement(_reactRouterDom.Route, { component: _components.Dashboard })
-              )
+              _react2.default.createElement(_reactRouterDom.Route, { path: '/new', component: _components.Form }),
+              _react2.default.createElement(_reactRouterDom.Route, { path: '/home/segment/', component: _components.Dashboard }),
+              _react2.default.createElement(_reactRouterDom.Route, { component: _components.Dashboard })
             ) : _react2.default.createElement(
               _reactRouterDom.Switch,
               null,
@@ -27545,10 +27542,11 @@ var Dashboard = function (_React$Component) {
       return _react2.default.createElement(
         _styled.Container,
         { row: true, start: true },
-        _react2.default.createElement(_components.Filters, null),
+        _react2.default.createElement(_components.Sidebar, null),
         deliveries.length ? _react2.default.createElement(
-          _styled.Container,
+          _styled.Content,
           null,
+          _react2.default.createElement(_components.Navbar, null),
           _react2.default.createElement(
             _styled.Container,
             { row: true },
@@ -27557,7 +27555,7 @@ var Dashboard = function (_React$Component) {
           ),
           _react2.default.createElement(_components.Table, { segment: deliveries })
         ) : _react2.default.createElement(
-          _styled.Container,
+          _styled.Content,
           { fullWidth: true, row: true, center: true },
           _react2.default.createElement(
             'h3',
@@ -27659,8 +27657,8 @@ function FilterDate(props) {
     _styled.Container,
     null,
     _react2.default.createElement(
-      'h3',
-      { style: { textAlign: 'center' } },
+      _styled.SideTitle,
+      null,
       'Limit by Date'
     ),
     _react2.default.createElement(
@@ -27714,58 +27712,7 @@ var mapDispatch = function mapDispatch(dispatch) {
 exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapState, mapDispatch)(FilterDate));
 
 /***/ }),
-/* 294 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = Filters;
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(2);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _reactRedux = __webpack_require__(18);
-
-var _reactRouterDom = __webpack_require__(23);
-
-var _store = __webpack_require__(22);
-
-var _styled = __webpack_require__(24);
-
-var _history = __webpack_require__(28);
-
-var _history2 = _interopRequireDefault(_history);
-
-var _components = __webpack_require__(45);
-
-var _Card = __webpack_require__(90);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var cardStyle = {
-  margin: '20px'
-};
-
-// Material UI Imports 
-function Filters() {
-  return _react2.default.createElement(
-    _Card.Card,
-    { style: cardStyle },
-    _react2.default.createElement(_components.Sliders, null),
-    _react2.default.createElement(_components.FilterDate, null)
-  );
-}
-
-/***/ }),
+/* 294 */,
 /* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -28002,26 +27949,22 @@ var Navbar = function Navbar(props) {
 
 
   return _react2.default.createElement(
-    _Card.Card,
-    null,
+    _styled.Bar,
+    { nav: true },
     _react2.default.createElement(
-      _styled.Bar,
-      { justify: 'flex-end' },
-      _react2.default.createElement(
-        _reactRouterDom.Link,
-        { to: '/home' },
-        icon('home')
-      ),
-      _react2.default.createElement(
-        _reactRouterDom.Link,
-        { to: '/new' },
-        icon('add_circle')
-      ),
-      _react2.default.createElement(
-        'a',
-        { href: '#', onClick: handleClick },
-        icon('exit_to_app')
-      )
+      _reactRouterDom.Link,
+      { to: '/home' },
+      icon('home')
+    ),
+    _react2.default.createElement(
+      _reactRouterDom.Link,
+      { to: '/new' },
+      icon('add_circle')
+    ),
+    _react2.default.createElement(
+      'a',
+      { href: '#', onClick: handleClick },
+      icon('exit_to_app')
     )
   );
 };
@@ -28081,6 +28024,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function Slider(props) {
   var filters = props.filters,
       name = props.name,
+      title = props.title,
       handleChange = props.handleChange;
 
   return _react2.default.createElement(
@@ -28089,7 +28033,7 @@ function Slider(props) {
     _react2.default.createElement(
       _styled.Label,
       null,
-      name
+      title
     ),
     _react2.default.createElement(_reactInputRange2.default, {
       formatLabel: function formatLabel(value) {
@@ -28151,10 +28095,6 @@ var _components = __webpack_require__(45);
 
 var _styled = __webpack_require__(24);
 
-var _history = __webpack_require__(28);
-
-var _history2 = _interopRequireDefault(_history);
-
 var _reactInputRange = __webpack_require__(240);
 
 var _reactInputRange2 = _interopRequireDefault(_reactInputRange);
@@ -28169,16 +28109,16 @@ function Sliders(props) {
     _styled.Container,
     { style: { padding: '0px 20px' } },
     _react2.default.createElement(
-      'h3',
-      { style: { textAlign: 'center' } },
+      _styled.SideTitle,
+      null,
       'Filters'
     ),
     filters && _react2.default.createElement(
       _styled.Container,
       null,
-      _react2.default.createElement(_components.Slider, { name: 'patient_age' }),
-      _react2.default.createElement(_components.Slider, { name: 'gestational_age' }),
-      _react2.default.createElement(_components.Slider, { name: 'bmi' })
+      _react2.default.createElement(_components.Slider, { name: 'patient_age', title: 'Age' }),
+      _react2.default.createElement(_components.Slider, { name: 'gestational_age', title: 'Gestational Age (weeks)' }),
+      _react2.default.createElement(_components.Slider, { name: 'bmi', title: 'BMI' })
     )
   );
 }
@@ -41571,7 +41511,7 @@ exports = module.exports = __webpack_require__(181)();
 
 
 // module
-exports.push([module.i, ".input-range__slider {\n  appearance: none;\n  background: #3f51b5;\n  border: 1px solid #3f51b5;\n  border-radius: 100%;\n  cursor: pointer;\n  display: block;\n  height: 1rem;\n  margin-left: -0.5rem;\n  margin-top: -0.65rem;\n  outline: none;\n  position: absolute;\n  top: 50%;\n  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;\n  width: 1rem; }\n  .input-range__slider:active {\n    transform: scale(1.3); }\n  .input-range__slider:focus {\n    box-shadow: 0 0 0 5px rgba(63, 81, 181, 0.2); }\n  .input-range--disabled .input-range__slider {\n    background: #cccccc;\n    border: 1px solid #cccccc;\n    box-shadow: none;\n    transform: none; }\n\n.input-range__slider-container {\n  transition: left 0.3s ease-out;\n}\n\n.input-range__label {\n  color: #aaaaaa;\n  font-family: \"Helvetica Neue\", san-serif;\n  font-size: 0.8rem;\n  transform: translateZ(0);\n  white-space: nowrap; }\n\n.input-range__label--min,\n.input-range__label--max {\n  display: none;\n  bottom: -1.4rem;\n  position: absolute; }\n\n.input-range__label--min {\n  left: 0; }\n\n.input-range__label--max {\n  right: 0; }\n\n.input-range__label--value {\n  position: absolute;\n  bottom: -1.6rem; }\n\n.input-range__label-container {\n  left: -50%;\n  position: relative; }\n  .input-range__label--max .input-range__label-container {\n    left: 50%; }\n\n.input-range__track {\n  background: #eeeeee;\n  border-radius: 0.3rem;\n  cursor: pointer;\n  display: block;\n  height: 0.3rem;\n  position: relative;\n  transition: left 0.3s ease-out, width 0.3s ease-out; }\n  .input-range--disabled .input-range__track {\n    background: #eeeeee; }\n\n.input-range__track--background {\n  left: 0;\n  margin-top: -0.15rem;\n  position: absolute;\n  right: 0;\n  top: 50%; }\n\n.input-range__track--active {\n  background: #3f51b5; }\n\n.input-range {\n  height: 1rem;\n  position: relative;\n  width: 100%; }\n\n/*# sourceMappingURL=index.css.map */", ""]);
+exports.push([module.i, ".input-range__slider {\n  appearance: none;\n  background: #EDF2F6;\n  border: 0px solid #EDF2F6;\n  border-radius: 100%;\n  cursor: pointer;\n  display: block;\n  height: 0.8rem;\n  margin-left: -0.5rem;\n  margin-top: -0.58rem;\n  outline: none;\n  position: absolute;\n  top: 50%;\n  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;\n  width: 0.8rem; }\n  .input-range__slider:active {\n    transform: scale(1.3); }\n  .input-range__slider:focus {\n    box-shadow: 0 0 0 5px rgba(63, 81, 181, 0.2); }\n  .input-range--disabled .input-range__slider {\n    background: #cccccc;\n    border: 1px solid #cccccc;\n    box-shadow: none;\n    transform: none; }\n\n.input-range__slider-container {\n  transition: left 0.3s ease-out;\n}\n\n.input-range__label {\n  color: #aaaaaa;\n  font-family: \"Helvetica Neue\", san-serif;\n  font-size: 0.8rem;\n  transform: translateZ(0);\n  white-space: nowrap; }\n\n.input-range__label--min,\n.input-range__label--max {\n  display: none;\n  bottom: -1.4rem;\n  position: absolute; }\n\n.input-range__label--min {\n  left: 0; }\n\n.input-range__label--max {\n  right: 0; }\n\n.input-range__label--value {\n  position: absolute;\n  bottom: -1.6rem; }\n\n.input-range__label-container {\n  left: -50%;\n  position: relative; }\n  .input-range__label--max .input-range__label-container {\n    left: 50%; }\n\n.input-range__track {\n  background: #eeeeee;\n  border-radius: 0.3rem;\n  cursor: pointer;\n  display: block;\n  height: 0.3rem;\n  position: relative;\n  transition: left 0.3s ease-out, width 0.3s ease-out; }\n  .input-range--disabled .input-range__track {\n    background: #eeeeee; }\n\n.input-range__track--background {\n  left: 0;\n  margin-top: -0.15rem;\n  position: absolute;\n  right: 0;\n  top: 50%; }\n\n.input-range__track--active {\n  background: #EDF2F6; }\n\n.input-range {\n  height: 1rem;\n  position: relative;\n  width: 100%; }\n\n/*# sourceMappingURL=index.css.map */", ""]);
 
 // exports
 
@@ -94431,6 +94371,56 @@ module.exports = function() {
 /***/ (function(module, exports) {
 
 /* (ignored) */
+
+/***/ }),
+/* 690 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Sidebar;
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactRedux = __webpack_require__(18);
+
+var _reactRouterDom = __webpack_require__(23);
+
+var _store = __webpack_require__(22);
+
+var _styled = __webpack_require__(24);
+
+var _history = __webpack_require__(28);
+
+var _history2 = _interopRequireDefault(_history);
+
+var _components = __webpack_require__(45);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Sidebar() {
+  return _react2.default.createElement(
+    _styled.Side,
+    null,
+    _react2.default.createElement(
+      _styled.Bar,
+      { justify: 'center' },
+      'Ob Tracker'
+    ),
+    _react2.default.createElement(_components.Sliders, null),
+    _react2.default.createElement(_components.FilterDate, null)
+  );
+}
 
 /***/ })
 /******/ ]);

@@ -9,10 +9,10 @@ import InputRange from 'react-input-range';
 import style from 'react-input-range/lib/css/index.css'
 
 function Slider(props){
-  const {filters, name, handleChange} = props;
+  const {filters, name, title, handleChange} = props;
   return (
     <Container style={{margin: '16px 0px'}}>
-      <Label>{name}</Label>
+      <Label>{title}</Label>
       <InputRange
         formatLabel={value => name === 'gestational_age' ? Math.floor(value / 7) : value}
         minValue={filters[name].min}

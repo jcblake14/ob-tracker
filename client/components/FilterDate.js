@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import {setDate, clearDate} from '../store'
-import {Container} from './styled'
+import {Container, SideTitle} from './styled'
 import history from '../history'
 
 // Material UI imports
@@ -23,7 +23,7 @@ const datePickerStyle = {
 function FilterDate(props){
   return (
     <Container>
-      <h3 style={{textAlign: 'center'}}>Limit by Date</h3>
+      <SideTitle>Limit by Date</SideTitle>
       <Container>
         <RaisedButton label="Last 7 Days" style={style} onClick={(e) => props.handleClick(e, 7)}/>
         <RaisedButton label="Last 30 Days" style={style} onClick={(e) => props.handleClick(e, 30)}/>

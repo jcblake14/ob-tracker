@@ -4,7 +4,7 @@ import {Router} from 'react-router'
 import {Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import history from './history'
-import {Main, Login, Signup, UserHome, Form, Dashboard, Navbar, ComingSoon} from './components'
+import {Main, Login, Signup, Form, Dashboard, ComingSoon} from './components'
 import {me} from './store'
 
 /**
@@ -24,14 +24,12 @@ class Routes extends Component {
           <Switch>
             {
               isLoggedIn ?
-                <Main>
-                  <Navbar />
                   <Switch>
                     <Route path="/new" component={Form} />
                     <Route path="/home/segment/" component={Dashboard} />
                     <Route component={Dashboard} />
                   </Switch>
-                </Main> :
+                :
                 <Switch>
                   <Route path="/login" component={ComingSoon} />
                   <Route path="/signup" component={ComingSoon} />

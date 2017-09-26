@@ -20,13 +20,11 @@ const Navbar = (props) => {
   const {handleClick} = props
 
   return (
-    <Card>
-      <Bar justify={'flex-end'}>
+    <Bar nav>
       <Link to="/home">{icon('home')}</Link>
       <Link to="/new">{icon('add_circle')}</Link>
       <a href="#" onClick={handleClick}>{icon('exit_to_app')}</a>
-      </Bar>
-    </Card>
+    </Bar>
   )
 }
 

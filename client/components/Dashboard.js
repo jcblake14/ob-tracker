@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {auth, getDeliveries} from '../store'
-import {Chart, Filters, Table, Navbar} from '../components'
-import {Container} from './styled'
+import {Chart, Sidebar, Table, Navbar} from '../components'
+import {Container, Content} from './styled'
 import {filterByRange, applyFilters, buildChartData} from '../utils'
 
 class Dashboard extends React.Component {
@@ -23,18 +23,19 @@ class Dashboard extends React.Component {
     
     return (
       <Container row start>
-        <Filters />
+        <Sidebar />
         {deliveries.length ?
-        <Container>
+        <Content>
+          <Navbar />
           <Container row>
             <Chart segment={buildChartData(deliveries, 'type')} title={'Delivery type'} name={'type'}/>
             <Chart segment={buildChartData(deliveries, 'induced')} title={'Induced'} name={'induced'}/>
           </Container>
           <Table segment={deliveries}/>
-        </Container> :
-        <Container fullWidth row center>
+        </Content> :
+        <Content fullWidth row center>
           <h3>No deliveries to display</h3>
-        </Container>
+        </Content>
         }
       </Container>
     )

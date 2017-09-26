@@ -13,23 +13,36 @@ export const Container = styled.div`
   align-items: ${props => props.center ? 'center' : props.start ? 'flex-start' : ''};
 `;
 
-
-export const IntroLink = styled(Link)`
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: #EDF2F6;
   width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  align-items: center;
 `
 
-export const IntroText = styled.h1`
-  color: white;
-  font-size: 60px;
+export const Side = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: #354052;
+  color: #B8C3D6;
+`;
+
+export const SideTitle = styled.h3`
+  text-align: center;
+  font-weight: normal;
 `
 
 export const Bar = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: ${props => props.justify};
+  justify-content: ${props => props.nav ? 'flex-end' : 'center'};
   width: 100%;
   height: 60px;
   align-items: center;
+  background-color: ${props => props.nav ? 'white' : 'white'}
 `;
 
 export const Fieldset = styled.div`
@@ -144,7 +157,8 @@ export const AuthInput = styled.input`
   }
 `
 
-export const Label = styled.h4`
+export const Label = styled.h5`
   margin-top: 0px;
   margin-bottom: 5px;
+  font-weight: normal;
 `

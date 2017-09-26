@@ -3,8 +3,7 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import {Slider} from '../components'
-import {Container} from './styled'
-import history from '../history'
+import {Container, SideTitle} from './styled'
 
 import InputRange from 'react-input-range';
 
@@ -12,12 +11,12 @@ function Sliders(props){
   const {filters, handleChange} = props;
   return (
     <Container style={{padding: '0px 20px'}}>
-      <h3 style={{textAlign: 'center'}}>Filters</h3>
+      <SideTitle>Filters</SideTitle>
       {filters && 
         <Container>
-          <Slider name={'patient_age'}/>
-          <Slider name={'gestational_age'}/>
-          <Slider name={'bmi'}/>
+          <Slider name={'patient_age'} title={'Age'}/>
+          <Slider name={'gestational_age'} title={'Gestational Age (weeks)'}/>
+          <Slider name={'bmi'} title={'BMI'}/>
         </Container>
       }
     </Container>
