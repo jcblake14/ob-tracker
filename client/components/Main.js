@@ -11,7 +11,7 @@ const Main = (props) => {
   const {children, handleClick, isLoggedIn} = props
 
   return (
-    <Container style={{backgroundColor: theme.content, minHeight: '100vh'}}>
+    <Container style={{backgroundColor: theme.content, minHeight: '100vh', minWidth: '100vw'}}>
       {children}
     </Container>
   )

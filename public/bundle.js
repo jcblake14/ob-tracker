@@ -28337,7 +28337,7 @@ var Main = function Main(props) {
 
   return _react2.default.createElement(
     _styled.Container,
-    { style: { backgroundColor: _theme2.default.content, minHeight: '100vh' } },
+    { style: { backgroundColor: _theme2.default.content, minHeight: '100vh', minWidth: '100vw' } },
     children
   );
 };
@@ -42139,7 +42139,7 @@ exports = module.exports = __webpack_require__(182)();
 
 
 // module
-exports.push([module.i, "body {\n  font-family: 'Montserrat';\n  margin: 0px; }\n\nh1, h2, h3, h4, h4 {\n  font-family: 'Montserrat'; }\n\na, a:hover, a:visited, a:link {\n  font-family: 'Montserrat';\n  text-decoration: none; }\n\n/* CSS TRANSITIONS */\n.fade-appear {\n  opacity: 0.01; }\n\n.fade-appear.fade-appear-active {\n  opacity: 1;\n  transition: opacity 500ms ease-in; }\n\n.fade-leave {\n  opacity: 1; }\n\n.fade-leave.fade-leave-active {\n  opacity: 0.01;\n  transition: opacity 300ms ease-in; }\n", ""]);
+exports.push([module.i, "body {\n  font-family: 'Montserrat';\n  margin: 0px;\n  height: 100%;\n  width: 100%;\n  background-color: #EDF2F6; }\n\nh1, h2, h3, h4, h4 {\n  font-family: 'Montserrat'; }\n\na, a:hover, a:visited, a:link {\n  font-family: 'Montserrat';\n  text-decoration: none; }\n\n/* CSS TRANSITIONS */\n.fade-appear {\n  opacity: 0.01; }\n\n.fade-appear.fade-appear-active {\n  opacity: 1;\n  transition: opacity 500ms ease-in; }\n\n.fade-leave {\n  opacity: 1; }\n\n.fade-leave.fade-leave-active {\n  opacity: 0.01;\n  transition: opacity 300ms ease-in; }\n", ""]);
 
 // exports
 
