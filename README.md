@@ -1,3 +1,3 @@
 # Ob Tracker
 
-An app to track deliveries for OB physicians.
+A data visualization app that provides at-a-glance reporting and analytics to practicing physician
