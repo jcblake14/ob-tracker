@@ -26,8 +26,7 @@ class Dashboard extends React.Component {
   }
 
   componentDidMount(){
-    if (!this.props.isLoggedIn && this.props.location.pathname === '/demo') {this.props.logInDemo()}
-    else this.props.getDeliveries(this.props.userId);
+    this.props.getDeliveries(this.props.userId);
   }
 
   render(){
@@ -80,9 +79,6 @@ const mapDispatch = (dispatch) => {
   return {
     getDeliveries(userId){
       dispatch(getDeliveries(userId))
-    },
-    logInDemo(){
-      dispatch(auth(process.env.TEST_EMAIL || 'obtrackertest@gmail.com', process.env.TEST_PASSWORD || 'obtrackertest1', 'login'))
     },
     handleTab(value){
       dispatch(changeTab(value));

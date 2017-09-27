@@ -50,12 +50,14 @@ export function validate(data) {
     gravidity: data.gravidity !== '' && !isNaN(Number(data.gravidity)) && data.gravidity < 30,
     parity: data.parity !== '' && !isNaN(Number(data.parity)) && data.parity < 30 && data.parity <= data.gravidity,
     bmi: data.bmi !== '' && !isNaN(Number(data.bmi)) && data.bmi < 50,
+    gestation: !!data.gestation,
     weeks: data.weeks !== '' && !isNaN(Number(data.weeks)) && data.weeks < 70,
     days: data.days !== '' && !isNaN(Number(data.days)) && data.days < 7,
     type: !!data.type,
     indication: data.type !== 'C-section' || data.indication !== '',
     induced: !!data.induced,
-    induction_reason: data.induced !== 'Yes' || data.induction_reason !== ''
+    induction_reason: data.induced !== 'Yes' || data.induction_reason !== '',
+    position: !!data.position
   }
 
   for (let key in validations){

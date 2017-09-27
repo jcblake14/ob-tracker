@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {withRouter, Link} from 'react-router-dom'
+import {auth} from '../store'
 import {Login} from '../components'
 import {Container, Intro, IntroBar, Title, SubTitle, IntroCard, IntroLinks, IntroNotify, Input} from './styled'
 import theme from '../theme'
@@ -91,7 +92,7 @@ function ComingSoon(props){
             </Container>
 
             <Container>
-              <Link to="/demo"><FlatButton style={demo}>TRY THE DEMO</FlatButton></Link>
+              <FlatButton onClick={props.handleDemo} style={demo}>TRY THE DEMO</FlatButton>
             </Container>
 
           </IntroCard>
@@ -108,4 +109,12 @@ const mapState = (state, ownProps) => {
   }
 }
 
-export default withRouter(connect(mapState)(ComingSoon))
+const mapDispatch = (dispatch) => {
+  return {
+    handleDemo(){
+      dispatch(auth('obtrackertest@gmail.com', 'obtrackertest1', 'login'))      
+    }
+  }
+}
+
+export default withRouter(connect(mapState, mapDispatch)(ComingSoon))

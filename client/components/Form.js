@@ -51,12 +51,14 @@ const mapState = (state) => {
     gravidity: state.delivery.gravidity,
     parity: state.delivery.parity,
     bmi: state.delivery.bmi,
+    gestation: state.delivery.gestation,
     weeks: state.delivery.weeks,
     days: state.delivery.days,
     type: state.delivery.type,
     indication: state.delivery.indication,
     induced: state.delivery.induced,
     induction_reason: state.delivery.induction_reason,
+    position: state.delivery.position,
     warn: state.form.warn
   }
 }

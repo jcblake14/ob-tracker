@@ -3810,12 +3810,14 @@ function validate(data) {
     gravidity: data.gravidity !== '' && !isNaN(Number(data.gravidity)) && data.gravidity < 30,
     parity: data.parity !== '' && !isNaN(Number(data.parity)) && data.parity < 30 && data.parity <= data.gravidity,
     bmi: data.bmi !== '' && !isNaN(Number(data.bmi)) && data.bmi < 50,
+    gestation: !!data.gestation,
     weeks: data.weeks !== '' && !isNaN(Number(data.weeks)) && data.weeks < 70,
     days: data.days !== '' && !isNaN(Number(data.days)) && data.days < 7,
     type: !!data.type,
     indication: data.type !== 'C-section' || data.indication !== '',
     induced: !!data.induced,
-    induction_reason: data.induced !== 'Yes' || data.induction_reason !== ''
+    induction_reason: data.induced !== 'Yes' || data.induction_reason !== '',
+    position: !!data.position
   };
 
   for (var key in validations) {
@@ -27711,6 +27713,8 @@ var _reactRedux = __webpack_require__(18);
 
 var _reactRouterDom = __webpack_require__(24);
 
+var _store = __webpack_require__(22);
+
 var _components = __webpack_require__(46);
 
 var _styled = __webpack_require__(23);
@@ -27855,13 +27859,9 @@ function ComingSoon(props) {
           _styled.Container,
           null,
           _react2.default.createElement(
-            _reactRouterDom.Link,
-            { to: '/demo' },
-            _react2.default.createElement(
-              _FlatButton2.default,
-              { style: demo },
-              'TRY THE DEMO'
-            )
+            _FlatButton2.default,
+            { onClick: props.handleDemo, style: demo },
+            'TRY THE DEMO'
           )
         )
       )
@@ -27876,14 +27876,22 @@ var mapState = function mapState(state, ownProps) {
   };
 };
 
-exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapState)(ComingSoon));
+var mapDispatch = function mapDispatch(dispatch) {
+  return {
+    handleDemo: function handleDemo() {
+      dispatch((0, _store.auth)('obtrackertest@gmail.com', 'obtrackertest1', 'login'));
+    }
+  };
+};
+
+exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapState, mapDispatch)(ComingSoon));
 
 /***/ }),
 /* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
+
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -27945,9 +27953,7 @@ var Dashboard = function (_React$Component) {
   _createClass(Dashboard, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      if (!this.props.isLoggedIn && this.props.location.pathname === '/demo') {
-        this.props.logInDemo();
-      } else this.props.getDeliveries(this.props.userId);
+      this.props.getDeliveries(this.props.userId);
     }
   }, {
     key: 'render',
@@ -28029,9 +28035,6 @@ var mapDispatch = function mapDispatch(dispatch) {
     getDeliveries: function getDeliveries(userId) {
       dispatch((0, _store.getDeliveries)(userId));
     },
-    logInDemo: function logInDemo() {
-      dispatch((0, _store.auth)(process.env.TEST_EMAIL || 'obtrackertest@gmail.com', process.env.TEST_PASSWORD || 'obtrackertest1', 'login'));
-    },
     handleTab: function handleTab(value) {
       dispatch((0, _store.changeTab)(value));
     }
@@ -28045,7 +28048,6 @@ Dashboard.propTypes = {
   email: _propTypes2.default.string,
   deliveries: _propTypes2.default.array
 };
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 /* 294 */
@@ -28258,12 +28260,14 @@ var mapState = function mapState(state) {
     gravidity: state.delivery.gravidity,
     parity: state.delivery.parity,
     bmi: state.delivery.bmi,
+    gestation: state.delivery.gestation,
     weeks: state.delivery.weeks,
     days: state.delivery.days,
     type: state.delivery.type,
     indication: state.delivery.indication,
     induced: state.delivery.induced,
     induction_reason: state.delivery.induction_reason,
+    position: state.delivery.position,
     warn: state.form.warn
   };
 };
