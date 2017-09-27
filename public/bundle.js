@@ -27991,7 +27991,7 @@ var Dashboard = function (_React$Component) {
               { label: 'Chart View', value: 'chart', disableTouchRipple: true },
               _react2.default.createElement(
                 _styled.Container,
-                { row: true, center: true },
+                { row: true, center: true, style: { justifyContent: 'center' } },
                 _react2.default.createElement(_components.Chart, { segment: (0, _utils.buildChartData)(deliveries, 'type'), title: 'Delivery type', name: 'type' }),
                 _react2.default.createElement(_components.Chart, { segment: (0, _utils.buildChartData)(deliveries, 'induced'), title: 'Induced', name: 'induced' })
               )
