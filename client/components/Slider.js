@@ -15,11 +15,11 @@ function Slider(props){
       <Label>{title}</Label>
       <InputRange
         formatLabel={value => name === 'gestational_age' ? Math.floor(value / 7) : value}
-        minValue={filters[name].min}
-        maxValue={filters[name].max}
+        minValue={filters[name].min || 0}
+        maxValue={filters[name].max || 1}
         value={{
-          min: filters[name].minValue || filters[name].min,
-          max: filters[name].maxValue || filters[name].max
+          min: filters[name].minValue || filters[name].min || 0,
+          max: filters[name].maxValue || filters[name].max || 0
         }}
         onChange={(e) => handleChange(e, name)}
       />

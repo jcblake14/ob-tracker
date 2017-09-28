@@ -25,7 +25,7 @@ function DeliveriesTable(props){
   let {handleClick, segment, sortTable} = props;
 
   segment = segment.sort((a, b) => {
-    if (!sortTable.column) return a.date < b.date ? -1 : 1;
+    if (!sortTable.column) return b.date < a.date ? -1 : 1;
     [a, b] = sortTable.order === 'desc' ? [b, a] : [a, b];
     if (typeof a[sortTable.column] === 'number') return a[sortTable.column] - b[sortTable.column];
     if (typeof a[sortTable.column] === 'string') return a[sortTable.column] <= b[sortTable.column] ? -1 : 1;
