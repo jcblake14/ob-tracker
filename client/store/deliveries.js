@@ -11,12 +11,12 @@ const SET_DELIVERIES = 'SET_DELIVERIES';
 /**
  * INITIAL STATE
  */
-const defaultDeliveries = []
+const defaultDeliveries = [];
 
 /**
  * ACTION CREATORS
  */
-const setDeliveries = (deliveries) => ({type: SET_DELIVERIES, deliveries})
+const setDeliveries = (deliveries) => ({type: SET_DELIVERIES, deliveries});
 
 /**
  * THUNK CREATORS
@@ -27,6 +27,15 @@ export function getDeliveries(userId){
     .then(res => {
       dispatch(setDeliveries(res.data));
       dispatch(initializeFilters(getFilterRanges(res.data)));
+    })
+  }
+}
+
+export function deleteDelivery(deliveryId, userId){
+  return function(dispatch){
+    return axios.delete(`/api/delivery/${deliveryId}/${userId}`)
+    .then(res => {
+      dispatch(setDeliveries(res.data))
     })
   }
 }

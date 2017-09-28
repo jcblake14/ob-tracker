@@ -27654,7 +27654,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function Chart(props) {
   var columns = (0, _utils.buildColumns)(props.segment);
-  console.log('columns', columns);
 
   var data = {
     type: 'donut',
@@ -28684,8 +28683,13 @@ var style = {
   backgroundColor: _theme2.default.content
 };
 
+var deleteButton = {
+  fontSize: '20px'
+};
+
 function DeliveriesTable(props) {
   var handleClick = props.handleClick,
+      handleDelete = props.handleDelete,
       segment = props.segment,
       sortTable = props.sortTable;
 
@@ -28764,7 +28768,8 @@ function DeliveriesTable(props) {
             null,
             'Gestational Age',
             _react2.default.createElement(SortButton, { column: 'gestational_age' })
-          )
+          ),
+          _react2.default.createElement(_Table.TableHeaderColumn, null)
         )
       ),
       _react2.default.createElement(
@@ -28803,6 +28808,20 @@ function DeliveriesTable(props) {
               _Table.TableRowColumn,
               null,
               Math.floor(del.gestational_age / 7) + 'w ' + del.gestational_age % 7 + 'd'
+            ),
+            _react2.default.createElement(
+              _Table.TableRowColumn,
+              null,
+              _react2.default.createElement(
+                _IconButton2.default,
+                {
+                  iconClassName: "material-icons",
+                  iconStyle: deleteButton,
+                  onClick: function onClick(e) {
+                    return handleDelete(e, del);
+                  } },
+                'delete'
+              )
             )
           );
         })
@@ -28821,6 +28840,9 @@ var mapDispatch = function mapDispatch(dispatch) {
   return {
     handleClick: function handleClick(e, column) {
       dispatch((0, _store.newSort)(column));
+    },
+    handleDelete: function handleDelete(e, d) {
+      dispatch((0, _store.deleteDelivery)(d.id, d.userId));
     }
   };
 };
@@ -29464,6 +29486,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.getDeliveries = getDeliveries;
+exports.deleteDelivery = deleteDelivery;
 
 exports.default = function () {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultDeliveries;
@@ -29516,6 +29539,14 @@ function getDeliveries(userId) {
     return _axios2.default.get('/api/users/' + userId + '/deliveries').then(function (res) {
       dispatch(setDeliveries(res.data));
       dispatch((0, _store.initializeFilters)((0, _utils.getFilterRanges)(res.data)));
+    });
+  };
+}
+
+function deleteDelivery(deliveryId, userId) {
+  return function (dispatch) {
+    return _axios2.default.delete('/api/delivery/' + deliveryId + '/' + userId).then(function (res) {
+      dispatch(setDeliveries(res.data));
     });
   };
 }

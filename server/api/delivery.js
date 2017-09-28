@@ -9,3 +9,14 @@ router.post('/', (req, res, next) => {
     res.send('created')
   })
 })
+
+router.delete('/:id/:userId', (req, res, next) => {
+  const {id, userId} = req.params;
+  Delivery.destroy({where: {id}})
+  .then(destroyed => {
+    return Delivery.findAll({where: {userId}})
+  })
+  .then(deliveries => {
+    res.send(deliveries);
+  })
+})

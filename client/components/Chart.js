@@ -9,7 +9,6 @@ import theme from '../theme'
 
 export default function Chart(props){
   const columns= buildColumns(props.segment);
-  console.log('columns', columns)
   
   const data = {
     type: 'donut',

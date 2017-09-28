@@ -2,7 +2,7 @@ import React from 'react'
 import history from '../history'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
-import {newSort} from '../store'
+import {newSort, deleteDelivery} from '../store'
 import {Container} from './styled'
 import theme from '../theme'
 
@@ -21,8 +21,12 @@ const style={
   backgroundColor: theme.content
 }
 
+const deleteButton = {
+  fontSize: '20px'
+}
+
 function DeliveriesTable(props){
-  let {handleClick, segment, sortTable} = props;
+  let {handleClick, handleDelete, segment, sortTable} = props;
 
   segment = segment.sort((a, b) => {
     if (!sortTable.column) return b.date < a.date ? -1 : 1;
@@ -55,6 +59,7 @@ function DeliveriesTable(props){
             <TableHeaderColumn>Induction Reason<SortButton column="induction_reason"/></TableHeaderColumn>
             <TableHeaderColumn>Age<SortButton column="patient_age"/></TableHeaderColumn>
             <TableHeaderColumn>Gestational Age<SortButton column="gestational_age"/></TableHeaderColumn>
+            <TableHeaderColumn></TableHeaderColumn>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -66,6 +71,14 @@ function DeliveriesTable(props){
               <TableRowColumn>{del.induction_reason || 'N/A'}</TableRowColumn>
               <TableRowColumn>{del.patient_age}</TableRowColumn>
               <TableRowColumn>{`${Math.floor(del.gestational_age / 7)}w ${del.gestational_age % 7}d`}</TableRowColumn>
+              <TableRowColumn>
+                <IconButton
+                  iconClassName={"material-icons"}
+                  iconStyle={deleteButton}
+                  onClick={(e) => handleDelete(e, del)}>
+                  delete
+                </IconButton>
+              </TableRowColumn>
             </TableRow>
           ))}
         </TableBody>
@@ -85,6 +98,9 @@ const mapDispatch = (dispatch) => {
   return {
     handleClick(e, column){
       dispatch(newSort(column));
+    },
+    handleDelete(e, d){
+      dispatch(deleteDelivery(d.id, d.userId))
     }
   }
 }
