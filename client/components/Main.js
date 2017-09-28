@@ -7,33 +7,12 @@ import {Navbar} from '../components'
 import {Container} from './styled'
 import theme from '../theme'
 
-const Main = (props) => {
-  const {children, handleClick, isLoggedIn} = props
+export default function Main(props){
+  const {children} = props
 
   return (
-    <Container style={{backgroundColor: theme.content, minHeight: '100vh', minWidth: '100vw'}}>
+    <Container>
       {children}
     </Container>
   )
-}
-
-const mapState = (state) => {
-  return {
-    isLoggedIn: !!state.user.id
-  }
-}
-
-const mapDispatch = (dispatch) => {
-  return {
-    handleClick () {
-      dispatch(logout())
-    }
-  }
-}
-
-export default withRouter(connect(mapState, mapDispatch)(Main))
-
-Main.propTypes = {
-  handleClick: PropTypes.func.isRequired,
-  isLoggedIn: PropTypes.bool.isRequired
 }

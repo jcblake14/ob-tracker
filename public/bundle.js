@@ -27654,6 +27654,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function Chart(props) {
   var columns = (0, _utils.buildColumns)(props.segment);
+  console.log('columns', columns);
 
   var data = {
     type: 'donut',
@@ -27992,8 +27993,8 @@ var Dashboard = function (_React$Component) {
               _react2.default.createElement(
                 _styled.Container,
                 { row: true, center: true, style: { justifyContent: 'center' } },
-                _react2.default.createElement(_components.Chart, { segment: (0, _utils.buildChartData)(deliveries, 'type'), title: 'Delivery type', name: 'type' }),
-                _react2.default.createElement(_components.Chart, { segment: (0, _utils.buildChartData)(deliveries, 'induced'), title: 'Induced', name: 'induced' })
+                deliveries.length && _react2.default.createElement(_components.Chart, { segment: (0, _utils.buildChartData)(deliveries, 'type'), title: 'Delivery type', name: 'type' }),
+                deliveries.length && _react2.default.createElement(_components.Chart, { segment: (0, _utils.buildChartData)(deliveries, 'induced'), title: 'Induced', name: 'induced' })
               )
             ),
             _react2.default.createElement(
@@ -28125,7 +28126,6 @@ function FilterDate(props) {
       _react2.default.createElement(_RaisedButton2.default, { label: 'Last 30 Days', style: style, onClick: function onClick(e) {
           return props.handleClick(e, 30);
         } }),
-      _react2.default.createElement(_RaisedButton2.default, { label: 'This Year (beta)', style: style, disabled: true }),
       _react2.default.createElement(_DatePicker2.default, { hintText: 'Start Date', mode: 'landscape', value: props.start, hintStyle: datePickerStyle, inputStyle: datePickerStyle, style: style, onChange: function onChange(e, d) {
           return props.handleDate(e, d, 'start');
         } }),
@@ -28304,6 +28304,7 @@ Form.propTypes = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = Main;
 
 var _react = __webpack_require__(1);
 
@@ -28329,40 +28330,16 @@ var _theme2 = _interopRequireDefault(_theme);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Main = function Main(props) {
-  var children = props.children,
-      handleClick = props.handleClick,
-      isLoggedIn = props.isLoggedIn;
+function Main(props) {
+  var children = props.children;
 
 
   return _react2.default.createElement(
     _styled.Container,
-    { style: { backgroundColor: _theme2.default.content, minHeight: '100vh', minWidth: '100vw' } },
+    null,
     children
   );
-};
-
-var mapState = function mapState(state) {
-  return {
-    isLoggedIn: !!state.user.id
-  };
-};
-
-var mapDispatch = function mapDispatch(dispatch) {
-  return {
-    handleClick: function handleClick() {
-      dispatch((0, _store.logout)());
-    }
-  };
-};
-
-exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapState, mapDispatch)(Main));
-
-
-Main.propTypes = {
-  handleClick: _propTypes2.default.func.isRequired,
-  isLoggedIn: _propTypes2.default.bool.isRequired
-};
+}
 
 /***/ }),
 /* 297 */

@@ -44,8 +44,8 @@ class Dashboard extends React.Component {
           <Tabs value={tab} onChange={handleTab} tabItemContainerStyle={style} inkBarStyle={inkBarStyle}>
             <Tab label="Chart View" value="chart" disableTouchRipple={true}>
               <Container row center style={{justifyContent: 'center'}}>
-                <Chart segment={buildChartData(deliveries, 'type')} title={'Delivery type'} name={'type'}/>
-                <Chart segment={buildChartData(deliveries, 'induced')} title={'Induced'} name={'induced'}/>
+                {deliveries.length && <Chart segment={buildChartData(deliveries, 'type')} title={'Delivery type'} name={'type'}/>}
+                {deliveries.length && <Chart segment={buildChartData(deliveries, 'induced')} title={'Induced'} name={'induced'}/>}
               </Container>
             </Tab>
             <Tab label="Table View" value="table" disableTouchRipple={true}>
