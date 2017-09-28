@@ -29547,7 +29547,6 @@ function deleteDelivery(deliveryId, userId) {
   return function (dispatch) {
     return _axios2.default.delete('/api/delivery/' + deliveryId + '/' + userId).then(function (res) {
       dispatch(setDeliveries(res.data));
-      dispatch((0, _store.initializeFilters)((0, _utils.getFilterRanges)(res.data)));
     });
   };
 }
