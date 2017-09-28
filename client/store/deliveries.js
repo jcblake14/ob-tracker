@@ -36,6 +36,7 @@ export function deleteDelivery(deliveryId, userId){
     return axios.delete(`/api/delivery/${deliveryId}/${userId}`)
     .then(res => {
       dispatch(setDeliveries(res.data))
+      dispatch(initializeFilters(getFilterRanges(res.data)));
     })
   }
 }
