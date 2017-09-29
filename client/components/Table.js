@@ -18,11 +18,19 @@ import {
 } from 'material-ui/Table';
 
 const style={
-  backgroundColor: theme.content
+  backgroundColor: theme.content,
 }
 
 const deleteButton = {
   fontSize: '20px'
+}
+
+const age = {
+  width: '25px'
+}
+
+const date = {
+  width: '75px'
 }
 
 function DeliveriesTable(props){
@@ -53,23 +61,23 @@ function DeliveriesTable(props){
       <Table style={style} multiSelectable={true}>
         <TableHeader>
           <TableRow>
-            <TableHeaderColumn>Date<SortButton column="date"/></TableHeaderColumn>
+            <TableHeaderColumn style={date}>Date<SortButton column="date"/></TableHeaderColumn>
             <TableHeaderColumn>Delivery Type<SortButton column="type"/></TableHeaderColumn>
             <TableHeaderColumn>Indication<SortButton column="indication"/></TableHeaderColumn>
             <TableHeaderColumn>Induction Reason<SortButton column="induction_reason"/></TableHeaderColumn>
-            <TableHeaderColumn>Age<SortButton column="patient_age"/></TableHeaderColumn>
-            <TableHeaderColumn>Gestational Age<SortButton column="gestational_age"/></TableHeaderColumn>
+            <TableHeaderColumn style={age}>Age<SortButton column="patient_age"/></TableHeaderColumn>
+            <TableHeaderColumn>Gest. Age<SortButton column="gestational_age"/></TableHeaderColumn>
             <TableHeaderColumn></TableHeaderColumn>
           </TableRow>
         </TableHeader>
         <TableBody>
           {segment.map((del, i) => (
             <TableRow key={i}>
-              <TableRowColumn>{del.date.slice(0, 10)}</TableRowColumn>
+              <TableRowColumn style={date}>{del.date.slice(0, 10)}</TableRowColumn>
               <TableRowColumn>{del.type}</TableRowColumn>
               <TableRowColumn>{del.indication || 'N/A'}</TableRowColumn>
               <TableRowColumn>{del.induction_reason || 'N/A'}</TableRowColumn>
-              <TableRowColumn>{del.patient_age}</TableRowColumn>
+              <TableRowColumn style={age}>{del.patient_age}</TableRowColumn>
               <TableRowColumn>{`${Math.floor(del.gestational_age / 7)}w ${del.gestational_age % 7}d`}</TableRowColumn>
               <TableRowColumn>
                 <IconButton

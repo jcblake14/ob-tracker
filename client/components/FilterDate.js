@@ -23,6 +23,7 @@ const datePickerStyle = {
   fontFamily: 'Montserrat'
 }
 
+
 function FilterDate(props){
   return (
     <Container style={{padding: '0px 16px'}}>
@@ -31,8 +32,24 @@ function FilterDate(props){
         <RaisedButton label="Last 7 Days" style={style} onClick={(e) => props.handleClick(e, 7)}/>
         <RaisedButton label="Last 30 Days" style={style} onClick={(e) => props.handleClick(e, 30)}/>
         {/*<RaisedButton label="This Year (beta)" style={style} disabled={true}/>*/}
-        <DatePicker hintText="Start Date" mode="landscape" value={props.start} hintStyle={datePickerStyle} inputStyle={datePickerStyle} style={style} firstDayOfWeek={0} onChange={(e, d) => props.handleDate(e, d, 'start')}/>
-        <DatePicker hintText="End Date" mode="landscape" value={props.end} hintStyle={datePickerStyle} inputStyle={datePickerStyle} style={style} firstDayOfWeek={0} onChange={(e, d) => props.handleDate(e, d, 'end')}/>   
+        <DatePicker
+          hintText="Start Date"
+          mode="landscape"
+          value={props.start}
+          hintStyle={datePickerStyle}
+          inputStyle={datePickerStyle}
+          style={style}
+          firstDayOfWeek={0}
+          onChange={(e, d) => props.handleDate(e, d, 'start')}/>
+        <DatePicker
+          hintText="End Date"
+          mode="landscape"
+          value={props.end}
+          hintStyle={datePickerStyle}
+          inputStyle={datePickerStyle}
+          style={style}
+          firstDayOfWeek={0}
+          onChange={(e, d) => props.handleDate(e, d, 'end')}/>   
         <RaisedButton label="Clear Date" style={style} secondary={true} disabled={!props.start && !props.end} onClick={props.handleClick} />  
       </Container>
     </Container>
