@@ -25370,13 +25370,15 @@ var deleteButton = {
   fontSize: '20px'
 };
 
-var age = {
-  width: '25px'
-};
-
-var date = {
-  width: '75px'
-};
+var date = { width: '62px', padding: '0px 10px' };
+var type = { width: '60px', padding: '0px 25px 0px 10px' };
+var position = { width: '52px', padding: '0px 10px' };
+var indication = { width: '60px', padding: '0px 10px' };
+var induction = { width: '72px' };
+var age = { width: '20px' };
+var gestational_age = { width: '45px', padding: '0px 10px' };
+var bmi = { width: '10px', paddingRight: '20px' };
+var trash = { padding: '0px 30px 0px 0px', width: '20px' };
 
 function DeliveriesTable(props) {
   var handleClick = props.handleClick,
@@ -25432,21 +25434,27 @@ function DeliveriesTable(props) {
           ),
           _react2.default.createElement(
             _Table.TableHeaderColumn,
-            null,
+            { style: type },
             'Delivery Type',
             _react2.default.createElement(SortButton, { column: 'type' })
           ),
           _react2.default.createElement(
             _Table.TableHeaderColumn,
-            null,
+            { style: indication },
             'Indication',
             _react2.default.createElement(SortButton, { column: 'indication' })
           ),
           _react2.default.createElement(
             _Table.TableHeaderColumn,
-            null,
+            { style: induction },
             'Induction Reason',
             _react2.default.createElement(SortButton, { column: 'induction_reason' })
+          ),
+          _react2.default.createElement(
+            _Table.TableHeaderColumn,
+            { style: position },
+            'Position',
+            _react2.default.createElement(SortButton, { column: 'position' })
           ),
           _react2.default.createElement(
             _Table.TableHeaderColumn,
@@ -25456,11 +25464,17 @@ function DeliveriesTable(props) {
           ),
           _react2.default.createElement(
             _Table.TableHeaderColumn,
-            null,
+            { style: gestational_age },
             'Gest. Age',
             _react2.default.createElement(SortButton, { column: 'gestational_age' })
           ),
-          _react2.default.createElement(_Table.TableHeaderColumn, null)
+          _react2.default.createElement(
+            _Table.TableHeaderColumn,
+            { style: bmi },
+            'BMI',
+            _react2.default.createElement(SortButton, { column: 'bmi' })
+          ),
+          _react2.default.createElement(_Table.TableHeaderColumn, { style: trash })
         )
       ),
       _react2.default.createElement(
@@ -25477,18 +25491,23 @@ function DeliveriesTable(props) {
             ),
             _react2.default.createElement(
               _Table.TableRowColumn,
-              null,
+              { style: type },
               del.type
             ),
             _react2.default.createElement(
               _Table.TableRowColumn,
-              null,
+              { style: indication },
               del.indication || 'N/A'
             ),
             _react2.default.createElement(
               _Table.TableRowColumn,
-              null,
+              { style: induction },
               del.induction_reason || 'N/A'
+            ),
+            _react2.default.createElement(
+              _Table.TableRowColumn,
+              { style: position },
+              del.position
             ),
             _react2.default.createElement(
               _Table.TableRowColumn,
@@ -25497,12 +25516,17 @@ function DeliveriesTable(props) {
             ),
             _react2.default.createElement(
               _Table.TableRowColumn,
-              null,
+              { style: gestational_age },
               Math.floor(del.gestational_age / 7) + 'w ' + del.gestational_age % 7 + 'd'
             ),
             _react2.default.createElement(
               _Table.TableRowColumn,
-              null,
+              { style: bmi },
+              del.bmi
+            ),
+            _react2.default.createElement(
+              _Table.TableRowColumn,
+              { style: trash },
               _react2.default.createElement(
                 _IconButton2.default,
                 {
