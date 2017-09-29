@@ -25,10 +25,6 @@ const muiTheme = getMuiTheme({
   }
 });
 
-
-// establishes socket connection
-import './socket'
-
 ReactDOM.render(
   <Provider store={store}>
     <MuiThemeProvider muiTheme={muiTheme}>  
