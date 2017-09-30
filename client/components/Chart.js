@@ -38,17 +38,9 @@ export default function Chart(props){
   }
 
   let chartToRender = function(){
-    return <C3Chart data={data}
-      legend={legend}
-      gauge={gauge}
-      transition={transition}
-      size={size}
-      tooltip={tooltip}
-      donut={donut}
-      color={color}
-      unloadBeforeLoad={true}
-      />
+    return <C3Chart data={data} legend={legend} gauge={gauge} transition={transition} size={size} tooltip={tooltip} donut={donut} color={color} />
   }
+  console.log('chart to render', chartToRender());
 
   return (
     <Container short center>
