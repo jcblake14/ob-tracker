@@ -24349,6 +24349,19 @@ function Chart(props) {
     pattern: [_theme2.default.color1, _theme2.default.color2, _theme2.default.color3]
   };
 
+  var chartToRender = function chartToRender() {
+    return _react2.default.createElement(_reactC3js2.default, { data: data,
+      legend: legend,
+      gauge: gauge,
+      transition: transition,
+      size: size,
+      tooltip: tooltip,
+      donut: donut,
+      color: color,
+      unloadBeforeLoad: true
+    });
+  };
+
   return _react2.default.createElement(
     _styled.Container,
     { short: true, center: true },
@@ -24357,7 +24370,7 @@ function Chart(props) {
       null,
       props.title
     ),
-    columns.length ? _react2.default.createElement(_reactC3js2.default, { data: data, legend: legend, gauge: gauge, transition: transition, size: size, tooltip: tooltip, donut: donut, color: color }) : null
+    columns.length ? chartToRender() : null
   );
 }
 
@@ -37432,23 +37445,28 @@ c3_chart_internal_fn.isAreaType = function (d) {
 };
 c3_chart_internal_fn.isBarType = function (d) {
     var id = isString(d) ? d : d.id;
-    return this.config.data_types[id] === 'bar';
+    // JB: edited from original module to check that this.config exists
+    return this.config && this.config.data_types[id] === 'bar';
 };
 c3_chart_internal_fn.isScatterType = function (d) {
     var id = isString(d) ? d : d.id;
-    return this.config.data_types[id] === 'scatter';
+    // JB: edited from original module to check that this.config exists
+    return this.config && this.config.data_types[id] === 'scatter';
 };
 c3_chart_internal_fn.isPieType = function (d) {
     var id = isString(d) ? d : d.id;
-    return this.config.data_types[id] === 'pie';
+    // JB: edited from original module to check that this.config exists
+    return this.config && this.config.data_types[id] === 'pie';
 };
 c3_chart_internal_fn.isGaugeType = function (d) {
     var id = isString(d) ? d : d.id;
-    return this.config.data_types[id] === 'gauge';
+    // JB: edited from original module to check that this.config exists
+    return this.config && this.config.data_types[id] === 'gauge';
 };
 c3_chart_internal_fn.isDonutType = function (d) {
     var id = isString(d) ? d : d.id;
-    return this.config.data_types[id] === 'donut';
+    // JB: edited from original module to check that this.config exists
+    return this.config && this.config.data_types[id] === 'donut';
 };
 c3_chart_internal_fn.isArcType = function (d) {
     return this.isPieType(d) || this.isDonutType(d) || this.isGaugeType(d);
