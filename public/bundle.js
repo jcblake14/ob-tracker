@@ -26359,7 +26359,6 @@ function createDelivery() {
     var delivery = Object.assign({}, state.delivery, { gestational_age: gestational_age }, { userId: state.user.id });
     return _axios2.default.post('/api/delivery', delivery).then(function (res) {
       _history2.default.push('/home');
-      console.log('response from back end:', res.data);
     });
   };
 }
