@@ -23,7 +23,7 @@ const Delivery = (props) => {
     <div>
       <RadioButtonGroup
         name="C-Section"
-        valueSelected={props.induced}
+        valueSelected={props.selected}
         onChange={(e) => handleSelect(e, e.target.value, props.type)}>
         <RadioButton
           value="Yes"

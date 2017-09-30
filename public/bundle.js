@@ -25678,7 +25678,7 @@ var Delivery = function Delivery(props) {
         _RadioButton.RadioButtonGroup,
         {
           name: 'C-Section',
-          valueSelected: props.induced,
+          valueSelected: props.selected,
           onChange: function onChange(e) {
             return handleSelect(e, e.target.value, props.type);
           } },
