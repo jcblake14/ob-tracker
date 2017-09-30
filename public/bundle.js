@@ -24352,7 +24352,6 @@ function Chart(props) {
   var chartToRender = function chartToRender() {
     return _react2.default.createElement(_reactC3js2.default, { data: data, legend: legend, gauge: gauge, transition: transition, size: size, tooltip: tooltip, donut: donut, color: color });
   };
-  console.log('chart to render', chartToRender());
 
   return _react2.default.createElement(
     _styled.Container,
