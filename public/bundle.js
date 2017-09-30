@@ -37443,12 +37443,12 @@ c3_chart_internal_fn.isBarType = function (d) {
 c3_chart_internal_fn.isScatterType = function (d) {
     var id = isString(d) ? d : d.id;
     // JB: edited from original module to check that this.config exists
-    return this.config.data_types[id] === 'scatter';
+    return this.config && this.config.data_types[id] === 'scatter';
 };
 c3_chart_internal_fn.isPieType = function (d) {
     var id = isString(d) ? d : d.id;
     // JB: edited from original module to check that this.config exists
-    return this.config.data_types[id] === 'pie';
+    return this.config && this.config.data_types[id] === 'pie';
 };
 c3_chart_internal_fn.isGaugeType = function (d) {
     var id = isString(d) ? d : d.id;
