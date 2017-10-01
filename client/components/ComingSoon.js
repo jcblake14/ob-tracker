@@ -21,7 +21,7 @@ const logo1 = {
 
 const right = {
   flexGrow: '1',
-  justifyContent: 'space-around'
+  justifyContent: 'space-between'
 }
 
 const notify = {
@@ -62,7 +62,7 @@ function ComingSoon(props){
 
             <IntroBar>
 
-              <Container style={{flexGrow: '5'}}>
+              <Container style={{flexGrow: '15'}}>
                   <IntroLinks to='/about' width={'100%'}>
                     <Container row>
                       <img src='/stethescope.png' style={logo1}/>

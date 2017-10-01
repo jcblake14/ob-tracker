@@ -1294,10 +1294,10 @@ var _templateObject = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direct
     _templateObject7 = _taggedTemplateLiteral(['\n  color: red;\n'], ['\n  color: red;\n']),
     _templateObject8 = _taggedTemplateLiteral(['\n  margin-top: 20px;\n  color: grey;\n  font-size: 12px;\n  &:visited{\n    text-decoration: none;\n  }\n  &:active{\n    text-decoration: none;\n  }\n  &:hover{\n    text-decoration: none;\n  }\n'], ['\n  margin-top: 20px;\n  color: grey;\n  font-size: 12px;\n  &:visited{\n    text-decoration: none;\n  }\n  &:active{\n    text-decoration: none;\n  }\n  &:hover{\n    text-decoration: none;\n  }\n']),
     _templateObject9 = _taggedTemplateLiteral(['\n  display: flex;\n  height: 100vh;\n  width: 100vw;\n  justify-content: center;\n  align-items: center;\n  background-color: ', ';\n  color: ', ';\n'], ['\n  display: flex;\n  height: 100vh;\n  width: 100vw;\n  justify-content: center;\n  align-items: center;\n  background-color: ', ';\n  color: ', ';\n']),
-    _templateObject10 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: column;\n  height: 80vh;\n  width: 80vw;\n  justify-content: space-between;\n  align-items: center;\n\n  box-sizing: border-box;\n  padding: 20px;\n  background-color: white;\n  border-radius: 3px;\n  box-shadow: 0 12px 38px black;\n'], ['\n  display: flex;\n  flex-direction: column;\n  height: 80vh;\n  width: 80vw;\n  justify-content: space-between;\n  align-items: center;\n\n  box-sizing: border-box;\n  padding: 20px;\n  background-color: white;\n  border-radius: 3px;\n  box-shadow: 0 12px 38px black;\n']),
+    _templateObject10 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: column;\n  height: 80vh;\n  width: 80vw;\n  justify-content: space-between;\n  align-items: center;\n\n  box-sizing: border-box;\n  padding: 20px 30px;\n  background-color: white;\n  border-radius: 3px;\n  box-shadow: 0 12px 38px black;\n'], ['\n  display: flex;\n  flex-direction: column;\n  height: 80vh;\n  width: 80vw;\n  justify-content: space-between;\n  align-items: center;\n\n  box-sizing: border-box;\n  padding: 20px 30px;\n  background-color: white;\n  border-radius: 3px;\n  box-shadow: 0 12px 38px black;\n']),
     _templateObject11 = _taggedTemplateLiteral(['\n  color: ', ';\n  font-size: 60px;\n  letter-spacing: 8px;\n  text-shadow: 2px 2px ', ';\n  margin: 50px 0px 0px 0px;\n'], ['\n  color: ', ';\n  font-size: 60px;\n  letter-spacing: 8px;\n  text-shadow: 2px 2px ', ';\n  margin: 50px 0px 0px 0px;\n']),
     _templateObject12 = _taggedTemplateLiteral(['\n  color: ', ';\n  font-size: 20px;\n  letter-spacing: 2px;\n  text-shadow: 1px 1px ', ';\n  margin: 0px;\n'], ['\n  color: ', ';\n  font-size: 20px;\n  letter-spacing: 2px;\n  text-shadow: 1px 1px ', ';\n  margin: 0px;\n']),
-    _templateObject13 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n  height: 60px;\n  justify-content: space-between;\n  align-items: center;\n'], ['\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n  height: 60px;\n  justify-content: space-between;\n  align-items: center;\n']),
+    _templateObject13 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n  height: 40px;\n  justify-content: space-between;\n  align-items: center;\n'], ['\n  display: flex;\n  flex-direction: row;\n  width: 100%;\n  height: 40px;\n  justify-content: space-between;\n  align-items: center;\n']),
     _templateObject14 = _taggedTemplateLiteral(['\n  color: ', ';\n  font-family: Montserrat;\n  width: ', ';\n  &:visited: {\n    text-decoration: none;\n  }\n'], ['\n  color: ', ';\n  font-family: Montserrat;\n  width: ', ';\n  &:visited: {\n    text-decoration: none;\n  }\n']),
     _templateObject15 = _taggedTemplateLiteral(['\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  border: 2px solid ', ';\n  border-radius: 2px;\n'], ['\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  border: 2px solid ', ';\n  border-radius: 2px;\n']),
     _templateObject16 = _taggedTemplateLiteral(['\n  width: 200px;\n  border: 0px;\n  border-radius: 2px;\n  padding: 10px;\n  color: ', ';\n  &::placeholder{\n    color: ', ';\n  }\n'], ['\n  width: 200px;\n  border: 0px;\n  border-radius: 2px;\n  padding: 10px;\n  color: ', ';\n  &::placeholder{\n    color: ', ';\n  }\n']),
@@ -24421,7 +24421,7 @@ var logo1 = {
 
 var right = {
   flexGrow: '1',
-  justifyContent: 'space-around'
+  justifyContent: 'space-between'
 };
 
 var notify = {
@@ -24471,7 +24471,7 @@ function ComingSoon(props) {
           null,
           _react2.default.createElement(
             _styled.Container,
-            { style: { flexGrow: '5' } },
+            { style: { flexGrow: '15' } },
             _react2.default.createElement(
               _styled.IntroLinks,
               { to: '/about', width: '100%' },

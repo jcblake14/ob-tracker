@@ -93,7 +93,7 @@ export const IntroCard = styled.div`
   align-items: center;
 
   box-sizing: border-box;
-  padding: 20px;
+  padding: 20px 30px;
   background-color: white;
   border-radius: 3px;
   box-shadow: 0 12px 38px black;
@@ -119,7 +119,7 @@ export const IntroBar = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 60px;
+  height: 40px;
   justify-content: space-between;
   align-items: center;
 `;
