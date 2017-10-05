@@ -4577,15 +4577,6 @@ Object.defineProperty(exports, 'Navbar', {
   }
 });
 
-var _UserHome = __webpack_require__(280);
-
-Object.defineProperty(exports, 'UserHome', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_UserHome).default;
-  }
-});
-
 var _AuthForm = __webpack_require__(268);
 
 Object.defineProperty(exports, 'Login', {
@@ -24877,20 +24868,21 @@ var _reactRouterDom = __webpack_require__(23);
 
 var _store = __webpack_require__(21);
 
-var _FlatButton = __webpack_require__(86);
-
-var _FlatButton2 = _interopRequireDefault(_FlatButton);
-
-var _Card = __webpack_require__(119);
-
 var _styled = __webpack_require__(22);
 
 var _utils = __webpack_require__(44);
 
 var _components = __webpack_require__(54);
 
+var _FlatButton = __webpack_require__(86);
+
+var _FlatButton2 = _interopRequireDefault(_FlatButton);
+
+var _Card = __webpack_require__(119);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// Material UI Imports
 var style = {
   width: '40vw',
   minWidth: '460px',
@@ -25204,6 +25196,7 @@ var _index2 = _interopRequireDefault(_index);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// React-Input-Range imports
 function Slider(props) {
   var filters = props.filters,
       name = props.name,
@@ -25277,10 +25270,6 @@ var _reactRouterDom = __webpack_require__(23);
 var _components = __webpack_require__(54);
 
 var _styled = __webpack_require__(22);
-
-var _reactInputRange = __webpack_require__(226);
-
-var _reactInputRange2 = _interopRequireDefault(_reactInputRange);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -25569,59 +25558,7 @@ var mapDispatch = function mapDispatch(dispatch) {
 exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapState, mapDispatch)(DeliveriesTable));
 
 /***/ }),
-/* 280 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.UserHome = undefined;
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(2);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _reactRedux = __webpack_require__(19);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var UserHome = exports.UserHome = function UserHome(props) {
-  var email = props.email;
-
-
-  return _react2.default.createElement(
-    'div',
-    null,
-    _react2.default.createElement(
-      'h3',
-      null,
-      'Welcome, ',
-      email
-    )
-  );
-};
-
-var mapState = function mapState(state) {
-  return {
-    email: state.user.email
-  };
-};
-
-exports.default = (0, _reactRedux.connect)(mapState)(UserHome);
-
-
-UserHome.propTypes = {
-  email: _propTypes2.default.string
-};
-
-/***/ }),
+/* 280 */,
 /* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 

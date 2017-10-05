@@ -5,8 +5,6 @@ import {withRouter} from 'react-router-dom'
 import {Slider} from '../components'
 import {Container, SideTitle} from './styled'
 
-import InputRange from 'react-input-range';
-
 function Sliders(props){
   const {filters, handleChange} = props;
   return (

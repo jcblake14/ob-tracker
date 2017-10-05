@@ -3,11 +3,13 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {withRouter, Link} from 'react-router-dom'
 import {createDelivery, clearDelivery, toggleWarning} from '../store'
-import FlatButton from 'material-ui/FlatButton';
-import {Card, CardTitle, CardActions} from 'material-ui/Card';
 import {Container, Fieldset, Warning} from './styled'
 import {form, validate} from '../utils'
 import {DeliveryDate, Information, Gestation, Delivery, Navbar} from '../components'
+
+// Material UI Imports
+import FlatButton from 'material-ui/FlatButton';
+import {Card, CardTitle, CardActions} from 'material-ui/Card';
 
 const style = {
   width: '40vw',

@@ -5,6 +5,7 @@ import {withRouter} from 'react-router-dom'
 import {setValues} from '../store'
 import {Container, Label} from './styled'
 
+// React-Input-Range imports
 import InputRange from 'react-input-range';
 import style from 'react-input-range/lib/css/index.css'
 
