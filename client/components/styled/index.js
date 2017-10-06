@@ -124,7 +124,8 @@ export const IntroBar = styled.div`
   align-items: center;
 `;
 
-export const IntroLinks = styled(Link)`
+// alt: export const IntroLinks = styled(Link)`
+export const IntroLinks = styled.a`
   color: ${theme.sidebar};
   font-family: Montserrat;
   width: ${props => props.width || ''};

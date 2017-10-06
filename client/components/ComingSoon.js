@@ -21,7 +21,7 @@ const logo1 = {
 
 const right = {
   flexGrow: '1',
-  justifyContent: 'space-between'
+  justifyContent: 'flex-end'
 }
 
 const notify = {
@@ -72,8 +72,8 @@ function ComingSoon(props){
               </Container>
 
               <Container row style={right}>
-                <IntroLinks to="/about">ABOUT</IntroLinks>
-                <IntroLinks to="/contact">CONTACT</IntroLinks>
+                {/*<IntroLinks to="/about">CONTACT</IntroLinks>*/}
+                <IntroLinks href="https://github.com/jcblake14/ob-tracker">ABOUT</IntroLinks>
               </Container>
 
             </IntroBar>
