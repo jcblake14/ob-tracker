@@ -25530,20 +25530,6 @@ function DeliveriesTable(props) {
           );
         })
       )
-    ),
-    _react2.default.createElement(
-      _styled.Container,
-      { row: true },
-      _react2.default.createElement(
-        _RaisedButton2.default,
-        { style: button },
-        'Hide selected'
-      ),
-      _react2.default.createElement(
-        _RaisedButton2.default,
-        { style: button },
-        'Show all'
-      )
     )
   );
 }
