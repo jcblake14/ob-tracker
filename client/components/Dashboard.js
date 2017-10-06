@@ -58,9 +58,9 @@ class Dashboard extends React.Component {
               <Table segment={deliveries}/>
             </Tab>
           </Tabs>
-          <Container row style={{justifyContent: 'flex-end', width: '100%'}}>
+          {/*<Container row style={{justifyContent: 'flex-end', width: '100%'}}>
             <h6 style={count}>Deliveries shown: {deliveries.length}</h6>
-          </Container>
+            </Container>*/}
         </Content>
         :
         <Content fullWidth row center>

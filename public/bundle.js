@@ -24635,16 +24635,6 @@ var Dashboard = function (_React$Component) {
               { label: 'Table View', value: 'table', disableTouchRipple: true },
               _react2.default.createElement(_components.Table, { segment: deliveries })
             )
-          ),
-          _react2.default.createElement(
-            _styled.Container,
-            { row: true, style: { justifyContent: 'flex-end', width: '100%' } },
-            _react2.default.createElement(
-              'h6',
-              { style: count },
-              'Deliveries shown: ',
-              deliveries.length
-            )
           )
         ) : _react2.default.createElement(
           _styled.Content,
