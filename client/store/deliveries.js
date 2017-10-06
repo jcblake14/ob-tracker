@@ -4,19 +4,19 @@ import {initializeFilters} from '../store'
 import {getFilterRanges} from '../utils'
 
 /**
- * ACTION TYPES
- */
-const SET_DELIVERIES = 'SET_DELIVERIES';
-
-/**
  * INITIAL STATE
  */
 const defaultDeliveries = [];
 
 /**
+ * ACTION TYPES
+ */
+const SET_DELIVERIES = 'SET_DELIVERIES';
+
+/**
  * ACTION CREATORS
  */
-const setDeliveries = (deliveries) => ({type: SET_DELIVERIES, deliveries});
+export const setDeliveries = (deliveries) => ({type: SET_DELIVERIES, deliveries});
 
 /**
  * THUNK CREATORS
@@ -38,6 +38,10 @@ export function deleteDelivery(deliveryId, userId){
       dispatch(setDeliveries(res.data))
     })
   }
+}
+
+function setSelection(deliveries, ids){
+
 }
 
 /**

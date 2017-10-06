@@ -2,7 +2,7 @@ import React from 'react'
 import history from '../history'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
-import {newSort, deleteDelivery} from '../store'
+import {newSort, deleteDelivery, setSelected} from '../store'
 import {Container} from './styled'
 import theme from '../theme'
 
@@ -16,6 +16,7 @@ import {
   TableRow,
   TableRowColumn,
 } from 'material-ui/Table';
+import RaisedButton from 'material-ui/RaisedButton';
 
 const style={
   backgroundColor: theme.content,
@@ -35,9 +36,14 @@ const gestational_age = {width: '45px', padding: '0px 10px'}
 const bmi = {width: '10px', paddingRight: '20px'}
 const trash = {padding: '0px 30px 0px 0px', width: '20px'}
 
+const button = {
+  width: '108px',
+  fontSize: '12px',
+  margin: '10px 10px 0px 10px'
+}
 
 function DeliveriesTable(props){
-  let {handleClick, handleDelete, segment, sortTable} = props;
+  let {handleClick, handleDelete, handleSelect, segment, sortTable} = props;
 
   segment = segment.sort((a, b) => {
     if (!sortTable.column) return b.date < a.date ? -1 : 1;
@@ -60,8 +66,8 @@ function DeliveriesTable(props){
   }
 
   return (
-    <Container short center>
-      <Table style={style} multiSelectable={true}>
+    <Container short>
+      <Table style={style} multiSelectable={true} onRowSelection={handleSelect}>
         <TableHeader>
           <TableRow>
             <TableHeaderColumn style={date}>Date<SortButton column="date"/></TableHeaderColumn>
@@ -98,6 +104,10 @@ function DeliveriesTable(props){
           ))}
         </TableBody>
       </Table>
+      {/*<Container row>
+        <RaisedButton style={button}>Hide selected</RaisedButton>
+        <RaisedButton style={button}>Show all</RaisedButton>
+      </Container>*/}
     </Container>
   )
 }
@@ -105,7 +115,7 @@ function DeliveriesTable(props){
 
 const mapState = (state) => {
   return {
-    sortTable: state.sortTable,
+    sortTable: state.sortTable
   }
 }
 
@@ -116,7 +126,13 @@ const mapDispatch = (dispatch) => {
     },
     handleDelete(e, d){
       dispatch(deleteDelivery(d.id, d.userId))
-    }
+    },
+    handleSelect(idxs){
+      dispatch(setSelected(idxs));
+    },
+    // handleHide(selected, deliveries){
+    //   console.log(selected, deliveries)
+    // }
   }
 }
 

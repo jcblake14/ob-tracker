@@ -15,7 +15,7 @@ const style = {
   width: '40vw',
   minWidth: '460px',
   padding: '20px',
-  marginTop: '20px'
+  margin: '20px 0px'
 }
 
 const Form = (props) => {

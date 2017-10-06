@@ -20,6 +20,12 @@ const inkBarStyle = {
   marginBottom: '20px'
 }
 
+const count = {
+  fontFamily: 'Roboto',
+  fontSize: '12px',
+  marginRight: '20px'
+}
+
 class Dashboard extends React.Component {
   constructor(props){
     super(props);
@@ -52,6 +58,9 @@ class Dashboard extends React.Component {
               <Table segment={deliveries}/>
             </Tab>
           </Tabs>
+          <Container row style={{justifyContent: 'flex-end', width: '100%'}}>
+            <h6 style={count}>Deliveries shown: {deliveries.length}</h6>
+          </Container>
         </Content>
         :
         <Content fullWidth row center>
@@ -82,6 +91,9 @@ const mapDispatch = (dispatch) => {
     },
     handleTab(value){
       dispatch(changeTab(value));
+    },
+    handleHide(){
+      // dipsatch(hideDeliveries())
     }
   }
 }
