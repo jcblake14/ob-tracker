@@ -14,9 +14,11 @@ module.exports = app
 
 if (process.env.NODE_ENV !== 'production') require('../secrets')
 
+/*
 setInterval(function() {
   http.get("http://obtracker.herokuapp.com");
 }, 300000); // ping the heroku url every 5 minutes (300000)
+*/
 
 // passport registration
 passport.serializeUser((user, done) => done(null, user.id))

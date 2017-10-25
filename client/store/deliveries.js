@@ -6,17 +6,24 @@ import {getFilterRanges} from '../utils'
 /**
  * INITIAL STATE
  */
-const defaultDeliveries = [];
+const defaultDeliveries = {
+  all: [],
+  selected: []
+};
 
 /**
  * ACTION TYPES
  */
 const SET_DELIVERIES = 'SET_DELIVERIES';
+const SET_SELECTED = 'SET_SELECTED';
+const HIDE = 'HIDE';
 
 /**
  * ACTION CREATORS
  */
 export const setDeliveries = (deliveries) => ({type: SET_DELIVERIES, deliveries});
+export const setSelectedDeliveries = (idxs) => ({type: SET_SELECTED, idxs})
+export const hideDeliveries = (deliveries) => ({type: HIDE, deliveries})
 
 /**
  * THUNK CREATORS
@@ -50,7 +57,13 @@ function setSelection(deliveries, ids){
 export default function (state = defaultDeliveries, action) {
   switch (action.type) {
     case SET_DELIVERIES:
-      return action.deliveries;
+      return Object.assign({}, state, {all: action.deliveries});
+    case SET_SELECTED:
+      return Object.assign({}, state, {selected: action.idxs});
+    case HIDE:
+      const deliveries = action.deliveries;
+      state.selected.forEach(idx => deliveries[idx].hidden = true);
+      return Object.assign({}, state, {all: deliveries});
     default:
       return state
   }

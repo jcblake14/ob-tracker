@@ -2,7 +2,7 @@ import React from 'react'
 import history from '../history'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
-import {newSort, deleteDelivery, setSelected} from '../store'
+import {newSort, deleteDelivery, setSelected, setSelectedDeliveries, hideDeliveries} from '../store'
 import {Container} from './styled'
 import theme from '../theme'
 
@@ -43,7 +43,7 @@ const button = {
 }
 
 function DeliveriesTable(props){
-  let {handleClick, handleDelete, handleSelect, segment, sortTable} = props;
+  let {handleClick, handleDelete, handleSelect, handleHide, segment, sortTable, deliveries} = props;
 
   segment = segment.sort((a, b) => {
     if (!sortTable.column) return b.date < a.date ? -1 : 1;
@@ -51,6 +51,8 @@ function DeliveriesTable(props){
     if (typeof a[sortTable.column] === 'number') return a[sortTable.column] - b[sortTable.column];
     if (typeof a[sortTable.column] === 'string') return a[sortTable.column] <= b[sortTable.column] ? -1 : 1;
   });
+
+  segment = segment.filter(s => !s.hidden);
 
   function SortButton(props){
     let {column} = props;
@@ -81,7 +83,7 @@ function DeliveriesTable(props){
             <TableHeaderColumn style={trash}></TableHeaderColumn>
           </TableRow>
         </TableHeader>
-        <TableBody>
+        <TableBody deselectOnClickaway={false}>
           {segment.map((del, i) => (
             <TableRow key={i}>
               <TableRowColumn style={date}>{del.date.slice(0, 10)}</TableRowColumn>
@@ -104,10 +106,10 @@ function DeliveriesTable(props){
           ))}
         </TableBody>
       </Table>
-      {/*<Container row>
-        <RaisedButton style={button}>Hide selected</RaisedButton>
+      {<Container row>
+        <RaisedButton style={button} onClick={e => handleHide(deliveries)}>Hide selected</RaisedButton>
         <RaisedButton style={button}>Show all</RaisedButton>
-      </Container>*/}
+      </Container>}
     </Container>
   )
 }
@@ -115,7 +117,8 @@ function DeliveriesTable(props){
 
 const mapState = (state) => {
   return {
-    sortTable: state.sortTable
+    sortTable: state.sortTable,
+    deliveries: state.deliveries.all
   }
 }
 
@@ -128,11 +131,12 @@ const mapDispatch = (dispatch) => {
       dispatch(deleteDelivery(d.id, d.userId))
     },
     handleSelect(idxs){
-      dispatch(setSelected(idxs));
+      // dispatch(setSelected(idxs));
+      dispatch(setSelectedDeliveries(idxs));
     },
-    // handleHide(selected, deliveries){
-    //   console.log(selected, deliveries)
-    // }
+    handleHide(deliveries){
+      dispatch(hideDeliveries(deliveries));
+    }
   }
 }
 

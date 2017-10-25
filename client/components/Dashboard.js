@@ -39,6 +39,7 @@ class Dashboard extends React.Component {
     let {userId, deliveries, range, filters, sortTable, tab, handleTab} = this.props
     deliveries = filterByRange(deliveries, range);
     deliveries = applyFilters(deliveries, filters);
+    deliveries = deliveries.filter(del => !del.hidden);
     
     return (
       <Container row start>
@@ -77,7 +78,7 @@ const mapState = (state) => {
   return {
     isLoggedIn: !!state.user.id,
     userId: state.user.id,
-    deliveries: state.deliveries,
+    deliveries: state.deliveries.all,
     range: state.range,
     filters: state.filters,
     tab: state.tab
@@ -91,9 +92,6 @@ const mapDispatch = (dispatch) => {
     },
     handleTab(value){
       dispatch(changeTab(value));
-    },
-    handleHide(){
-      // dipsatch(hideDeliveries())
     }
   }
 }

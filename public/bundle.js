@@ -24603,6 +24603,9 @@ var Dashboard = function (_React$Component) {
 
       deliveries = (0, _utils.filterByRange)(deliveries, range);
       deliveries = (0, _utils.applyFilters)(deliveries, filters);
+      deliveries = deliveries.filter(function (del) {
+        return !del.hidden;
+      });
 
       return _react2.default.createElement(
         _styled.Container,
@@ -24657,7 +24660,7 @@ var mapState = function mapState(state) {
   return {
     isLoggedIn: !!state.user.id,
     userId: state.user.id,
-    deliveries: state.deliveries,
+    deliveries: state.deliveries.all,
     range: state.range,
     filters: state.filters,
     tab: state.tab
@@ -24671,9 +24674,6 @@ var mapDispatch = function mapDispatch(dispatch) {
     },
     handleTab: function handleTab(value) {
       dispatch((0, _store.changeTab)(value));
-    },
-    handleHide: function handleHide() {
-      // dipsatch(hideDeliveries())
     }
   };
 };
@@ -25362,8 +25362,10 @@ function DeliveriesTable(props) {
   var handleClick = props.handleClick,
       handleDelete = props.handleDelete,
       handleSelect = props.handleSelect,
+      handleHide = props.handleHide,
       segment = props.segment,
-      sortTable = props.sortTable;
+      sortTable = props.sortTable,
+      deliveries = props.deliveries;
 
 
   segment = segment.sort(function (a, b) {
@@ -25378,6 +25380,10 @@ function DeliveriesTable(props) {
 
     if (typeof a[sortTable.column] === 'number') return a[sortTable.column] - b[sortTable.column];
     if (typeof a[sortTable.column] === 'string') return a[sortTable.column] <= b[sortTable.column] ? -1 : 1;
+  });
+
+  segment = segment.filter(function (s) {
+    return !s.hidden;
   });
 
   function SortButton(props) {
@@ -25458,7 +25464,7 @@ function DeliveriesTable(props) {
       ),
       _react2.default.createElement(
         _Table.TableBody,
-        null,
+        { deselectOnClickaway: false },
         segment.map(function (del, i) {
           return _react2.default.createElement(
             _Table.TableRow,
@@ -25520,13 +25526,30 @@ function DeliveriesTable(props) {
           );
         })
       )
+    ),
+    _react2.default.createElement(
+      _styled.Container,
+      { row: true },
+      _react2.default.createElement(
+        _RaisedButton2.default,
+        { style: button, onClick: function onClick(e) {
+            return handleHide(deliveries);
+          } },
+        'Hide selected'
+      ),
+      _react2.default.createElement(
+        _RaisedButton2.default,
+        { style: button },
+        'Show all'
+      )
     )
   );
 }
 
 var mapState = function mapState(state) {
   return {
-    sortTable: state.sortTable
+    sortTable: state.sortTable,
+    deliveries: state.deliveries.all
   };
 };
 
@@ -25539,7 +25562,11 @@ var mapDispatch = function mapDispatch(dispatch) {
       dispatch((0, _store.deleteDelivery)(d.id, d.userId));
     },
     handleSelect: function handleSelect(idxs) {
-      dispatch((0, _store.setSelected)(idxs));
+      // dispatch(setSelected(idxs));
+      dispatch((0, _store.setSelectedDeliveries)(idxs));
+    },
+    handleHide: function handleHide(deliveries) {
+      dispatch((0, _store.hideDeliveries)(deliveries));
     }
   };
 };
@@ -26124,7 +26151,7 @@ _reactDom2.default.render(_react2.default.createElement(
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.setDeliveries = undefined;
+exports.hideDeliveries = exports.setSelectedDeliveries = exports.setDeliveries = undefined;
 exports.getDeliveries = getDeliveries;
 exports.deleteDelivery = deleteDelivery;
 
@@ -26134,7 +26161,15 @@ exports.default = function () {
 
   switch (action.type) {
     case SET_DELIVERIES:
-      return action.deliveries;
+      return Object.assign({}, state, { all: action.deliveries });
+    case SET_SELECTED:
+      return Object.assign({}, state, { selected: action.idxs });
+    case HIDE:
+      var deliveries = action.deliveries;
+      state.selected.forEach(function (idx) {
+        return deliveries[idx].hidden = true;
+      });
+      return Object.assign({}, state, { all: deliveries });
     default:
       return state;
   }
@@ -26157,18 +26192,29 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /**
  * INITIAL STATE
  */
-var defaultDeliveries = [];
+var defaultDeliveries = {
+  all: [],
+  selected: []
+};
 
 /**
  * ACTION TYPES
  */
 var SET_DELIVERIES = 'SET_DELIVERIES';
+var SET_SELECTED = 'SET_SELECTED';
+var HIDE = 'HIDE';
 
 /**
  * ACTION CREATORS
  */
 var setDeliveries = exports.setDeliveries = function setDeliveries(deliveries) {
   return { type: SET_DELIVERIES, deliveries: deliveries };
+};
+var setSelectedDeliveries = exports.setSelectedDeliveries = function setSelectedDeliveries(idxs) {
+  return { type: SET_SELECTED, idxs: idxs };
+};
+var hideDeliveries = exports.hideDeliveries = function hideDeliveries(deliveries) {
+  return { type: HIDE, deliveries: deliveries };
 };
 
 /**
